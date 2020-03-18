@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     filter: {
       categories: [],
-      name: ''
+      search: ''
     },
     locations: LocationsData
   },
@@ -17,24 +17,23 @@ export default new Vuex.Store({
       if (state.filter.categories.indexOf(category) == -1) {
         state.filter.categories.push(category)
       } else {
-        console.log(state.filter.categories.indexOf(category)+1);
         state.filter.categories.splice(state.filter.categories.indexOf(category),1)
       }
     },
-    searchNameFilter(state, searchText) {
-      state.filter.name = searchText
+    searchFilter(state, searchText) {
+      state.filter.search = searchText
     }
   },
   getters: {
     getFilteredLocations: state => {
       return state.locations.filter(function (location) {
-        if (location.name.toLowerCase().indexOf(state.filter.name.toLowerCase()) != -1  && (state.filter.categories.length === 0 || location.categories.map((category=>state.filter.categories.indexOf(category)!=-1)).indexOf(true)!=-1)) {
+        if (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1  && (state.filter.categories.length === 0 || location.categories.map((category=>state.filter.categories.indexOf(category)!=-1)).indexOf(true)!=-1)) {
           return location;
         }
       })
     },
-    getNameFilter: state => {
-      return state.filter.name
+    getSearchFilter: state => {
+      return state.filter.search
     },
     getCategoryFilter: state => {
       return state.filter.categories;

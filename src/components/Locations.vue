@@ -27,9 +27,16 @@ export default {
 <style scoped>
 .locations {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .locations{
+    grid-template-columns: 1fr;
+
+  }
 }
 
 .list {
@@ -45,7 +52,6 @@ export default {
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
-  transform: translateY(30px);
 }
 
 .list-move {

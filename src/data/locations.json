@@ -1,17 +1,20 @@
 [
     {
-        "name" : "Es",
-        "contact" : "mail@johannesklinger.com",
-        "description" : "Examplerestaurant",
-        "image" : "https://picsum.photos/200/300",
-        "city" : "Frankfurt",
-        "categories" : ["restaurant","cafe","kleidung"]
+        "name" : "Die Genussverstärker",
+        "contact" : "https://www.die-genussverstaerker.de/support-your-local-dealer-soli-gutscheine-gegen-die-corona-krise/",
+        "email":"info@die-genussverstaerker.de",
+        "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise",
+        "image" : "./../assets/cats/bar.jpg",
+        "street": "Bernardtstraße 63a",
+        "city" : "Offenbach",
+        "categories" : ["alkohol","shop","getränke"]
     },
     {
-        "name" : "Restaurant 2",
+        "name" : "SHABBY DIELE SCANDI LIVING",
         "contact" : "mail@johannesklinger.com",
         "description" : "Examplerestaurant",
-        "image" : "https://picsum.photos/200/300",
+        "image" : "./../assets/cats/cafe.jpg",
+        "street": "Musterstraße 24",
         "city" : "Frankfurt",
         "categories" : ["kleidung"]
     },
@@ -19,7 +22,8 @@
         "name" : "Essensplatz 3",
         "contact" : "mail@johannesklinger.com",
         "description" : "Examplerestaurant",
-        "image" : "https://picsum.photos/200/300",
+        "image" : "./../assets/cats/cloth.jpg",
+        "street": "Musterstraße 24",
         "city" : "Frankfurt",
         "categories" : ["restaurant","cafe"]
     },
@@ -28,6 +32,7 @@
         "contact" : "mail@johannesklinger.com",
         "description" : "Examplerestaurant",
         "image" : "https://picsum.photos/200/300",
+        "street": "Musterstraße 24",
         "city" : "Frankfurt",
         "categories" : ["restaurant","cafe"]
     },
@@ -36,6 +41,7 @@
         "contact" : "mail@johannesklinger.com",
         "description" : "Examplerestaurant",
         "image" : "https://picsum.photos/200/300",
+        "street": "Musterstraße 24",
         "city" : "Frankfurt",
         "categories" : ["restaurant","cafe"]
     }

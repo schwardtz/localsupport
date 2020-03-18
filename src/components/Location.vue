@@ -1,10 +1,15 @@
 <template>
   <div class="location" :style="{ 'background-image': 'url(' + data.image + ')' }">
-    <ul>
-      <li>{{data.name}}</li>
-      <li>{{data.contact}}</li>
-      <li>{{data.categories}}</li>
-    </ul>
+    <address>
+      <h2>{{data.name}}</h2>
+      <span>{{data.street}}</span>
+      <span>{{data.city}}</span>
+    </address>
+    <content>
+       <p> {{data.description}}</p>
+       <a :href="data.contact" :title="data.name">{{data.name}}</a>
+       <a v-if="data.email" :href="'mailto:'+data.email">E-Mail</a>
+    </content>
   </div>
 </template>
 
@@ -13,24 +18,69 @@ export default {
   name: "Location",
   props: {
     data: Object
+  },
+  data () {
+  return {
+    publicPath: process.env.BASE_URL
   }
+}
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .location {
-  padding: 20px;
   background-size: cover;
   transition: all 1s;
-}
-ul {
-  padding: 0;
-  margin: 0;
+  position: relative;
+  transition: all 0.3s ease-in;
+  transform: scale(1);
+  outline: none;
 }
 
-li {
-  list-style: none;
+.location:hover {
+  transform: scale(1.03);
+
+}
+
+content {
+  background-color: white;
+  display: inline-block;
+  padding: 20px 20px;
+  margin-top: 80px;
+  width: 100%;
+  text-align: left;
+  color: rgba(80, 80, 80, 1);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+
+address {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  text-transform: lowercase;
+  text-align: left;
   color: white;
 }
+
+address span {
+  display: inline-block;
+  width: 100%;
+  font-size: 13px;
+}
+
+p,a {
+  color: rgba(80, 80, 80, 1);
+  display: inline-block;
+  width: 100%;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  font-size: 15px;
+}
+
 </style>

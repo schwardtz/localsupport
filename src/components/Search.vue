@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <input type="text" v-model="search" @keyup="changeFilterName" />
+    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="stadt" />
   </div>
 </template>
 
@@ -9,8 +9,8 @@ import store from "../vuex/store.js";
 export default {
   name: "Search",
   methods: {
-    changeFilterName() {
-      store.commit("searchNameFilter", this.search);
+    changeFilterSearch() {
+      store.commit("searchFilter", this.search);
     }
   },
   data() {
@@ -31,7 +31,7 @@ export default {
 input {
   border:none;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0,0,0,50%);
   width: 300px;
 }
 </style>

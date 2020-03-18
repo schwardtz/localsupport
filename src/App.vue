@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Support you local dealer</h1>
+    <p>gutscheine für die gute zeit nach der schlechten zeit</p>
     <LocalSupport />
   </div>
 </template>
@@ -22,6 +23,16 @@ export default {
 </script>
 
 <style>
+html {
+background-color: #ffac81;
+background-image :linear-gradient(315deg,  rgb(255, 146, 139) 0%,rgb(247, 210, 190) 74%);
+height: 100vh;
+background-attachment: fixed;
+}
+
+*{
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,8 +45,16 @@ export default {
   margin-top: 60px;
 }
 
+p {
+  font-size: 13px;
+  color:white;
+  padding:0;
+  margin-top: 5px;
+}
+
 h1{
   text-transform:lowercase;
-  
+  color: white;
+  margin-bottom: 0;
 }
 </style>
