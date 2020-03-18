@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "restaurant",
+        "icon" : "🍔"
+    },
+    {
+        "name" : "kleidung",
+        "icon" : "👕"
+    },
+    {
+        "name" : "bar",
+        "icon" : "🥃"
+    }
+]

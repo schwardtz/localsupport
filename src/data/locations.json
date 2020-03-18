@@ -1,0 +1,42 @@
+[
+    {
+        "name" : "Es",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe","kleidung"]
+    },
+    {
+        "name" : "Restaurant 2",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "city" : "Frankfurt",
+        "categories" : ["kleidung"]
+    },
+    {
+        "name" : "Essensplatz 3",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe"]
+    },
+    {
+        "name" : "Essensplatz 4",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe"]
+    },
+    {
+        "name" : "Essensplatz 5",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe"]
+    }
+]
