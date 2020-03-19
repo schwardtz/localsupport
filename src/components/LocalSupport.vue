@@ -2,7 +2,7 @@
   <div class="content">
     <header>
       <h1>Support you local dealer</h1>
-      <p>Lokale Geschäfte unterstützen <br >für die gute zeit nach der schlechten zeit</p>
+      <p>Lokale Geschäfte unterstützen <br >Gutscheine für die gute Zeit nach der schlechten Zeit</p>
       <Search />
       <Categories v-on:category-locations="filterLocationsByCategory" />
     </header>
