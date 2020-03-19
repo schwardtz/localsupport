@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="stadt" />
+    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="suche" />
   </div>
 </template>
 

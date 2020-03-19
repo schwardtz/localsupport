@@ -1,6 +1,6 @@
 <template>
   <transition-group name="list" tag="div" class="locations">
-    <div v-for="location in locations" :key="location.name">
+    <div v-for="location in locations" :key="location.name" class="location-item">
       <Location :data="location" />
     </div>
   </transition-group>
@@ -27,15 +27,18 @@ export default {
 <style scoped>
 .locations {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-column-gap: 20px; 
+  grid-row-gap: 20px; 
+  justify-content: center;
+  grid-auto-rows: 1fr;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
   .locations{
-    grid-template-columns: 1fr;
-
+    /* grid-template-columns: 1fr; */
   }
 }
 
@@ -60,6 +63,7 @@ export default {
 
 .list-leave-active {
     position: absolute;
+    max-width: 19%;
 }
 
 </style>

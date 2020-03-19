@@ -31,7 +31,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+button {
+  border: none;
+  padding: 5px;
+}
 button.active{
-  outline: 1px solid red;
+  background-color: rgba(200,200,200,1);
 }
 </style>

@@ -1,5 +1,15 @@
 [
     {
+        "name" : "SHABBY DIELE SCANDI LIVING",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise Soli Gutscheine gegen die Corona Krise",
+        "email":"info@die-genussverstaerker.de",
+        "image" : "./../assets/cats/cafe.jpg",
+        "street": "Musterstraße 24",
+        "city" : "Frankfurt",
+        "categories" : ["kleidung"]
+    },
+    {
         "name" : "Die Genussverstärker",
         "contact" : "https://www.die-genussverstaerker.de/support-your-local-dealer-soli-gutscheine-gegen-die-corona-krise/",
         "email":"info@die-genussverstaerker.de",
@@ -10,18 +20,9 @@
         "categories" : ["alkohol","shop","getränke"]
     },
     {
-        "name" : "SHABBY DIELE SCANDI LIVING",
-        "contact" : "mail@johannesklinger.com",
-        "description" : "Examplerestaurant",
-        "image" : "./../assets/cats/cafe.jpg",
-        "street": "Musterstraße 24",
-        "city" : "Frankfurt",
-        "categories" : ["kleidung"]
-    },
-    {
         "name" : "Essensplatz 3",
         "contact" : "mail@johannesklinger.com",
-        "description" : "Examplerestaurant",
+        "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise",
         "image" : "./../assets/cats/cloth.jpg",
         "street": "Musterstraße 24",
         "city" : "Frankfurt",
@@ -29,6 +30,24 @@
     },
     {
         "name" : "Essensplatz 4",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "street": "Musterstraße 24",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe"]
+    },
+    {
+        "name" : "Essensplatz 5",
+        "contact" : "mail@johannesklinger.com",
+        "description" : "Examplerestaurant",
+        "image" : "https://picsum.photos/200/300",
+        "street": "Musterstraße 24",
+        "city" : "Frankfurt",
+        "categories" : ["restaurant","cafe"]
+    },
+    {
+        "name" : "Essensplatz 5",
         "contact" : "mail@johannesklinger.com",
         "description" : "Examplerestaurant",
         "image" : "https://picsum.photos/200/300",

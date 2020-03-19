@@ -36,19 +36,24 @@ export default {
   transition: all 0.3s ease-in;
   transform: scale(1);
   outline: none;
+  height: 100%;
+  box-shadow: 0 0 5px 0 rgba(80, 80, 80, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .location:hover {
-  transform: scale(1.03);
-
+  /* transform: scale(1.03); */
+  /* border-bottom:4px solid pink; */
 }
 
 content {
   background-color: white;
   display: inline-block;
   padding: 20px 20px;
-  margin-top: 80px;
   width: 100%;
+  flex: 1;
   text-align: left;
   color: rgba(80, 80, 80, 1);
   font-size: 13px;
@@ -57,12 +62,11 @@ content {
 
 
 address {
-  position: absolute;
-  left: 15px;
-  top: 15px;
+  height: 85px;
   text-transform: lowercase;
   text-align: left;
   color: white;
+  padding: 15px;
 }
 
 address span {

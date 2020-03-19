@@ -1,8 +1,12 @@
 <template>
   <div class="hello">
-    <Search />
-    <Categories v-on:category-locations="filterLocationsByCategory" />
-    <Locations  />
+    <header>
+      <h1>Support you local dealer</h1>
+      <p>gutscheine für die gute zeit nach der schlechten zeit</p>
+      <Search />
+      <Categories v-on:category-locations="filterLocationsByCategory" />
+    </header>
+    <Locations />
   </div>
 </template>
 
@@ -50,5 +54,13 @@ li {
 }
 a {
   color: #42b983;
+}
+
+header {
+  background-image: url("./../assets/hero/hero.jpg");
+  padding: 30px 0;
+  background-position: center center;
+  background-size: 100% auto;
+  margin-bottom: 20px;
 }
 </style>

@@ -1,3 +1,6 @@
 node_modules
 .gitignore
 vue.config.js
+.env.development.local
+credentials.js
+firebase/app.js

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import LocationsData from "../data/locations.json";
+// import LocationsData from "../data/locations.json";
+import db from "./../firebase/db.js"
 
 Vue.use(Vuex)
 
@@ -10,24 +11,36 @@ export default new Vuex.Store({
       categories: [],
       search: ''
     },
-    locations: LocationsData
+    locations: []
+  },
+  actions: {
+    fetchLocations({ commit }) {
+      db.collection("locations").get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          commit("addLocation", doc.data())
+        });
+      });
+    }
   },
   mutations: {
     addCategoryFilter(state, category) {
       if (state.filter.categories.indexOf(category) == -1) {
         state.filter.categories.push(category)
       } else {
-        state.filter.categories.splice(state.filter.categories.indexOf(category),1)
+        state.filter.categories.splice(state.filter.categories.indexOf(category), 1)
       }
     },
     searchFilter(state, searchText) {
       state.filter.search = searchText
+    },
+    addLocation(state, location) {
+      state.locations.push(location)
     }
   },
   getters: {
     getFilteredLocations: state => {
       return state.locations.filter(function (location) {
-        if (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1  && (state.filter.categories.length === 0 || location.categories.map((category=>state.filter.categories.indexOf(category)!=-1)).indexOf(true)!=-1)) {
+        if (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1 && (state.filter.categories.length === 0 || location.categories.map((category => state.filter.categories.indexOf(category) != -1)).indexOf(true) != -1)) {
           return location;
         }
       })
@@ -41,3 +54,4 @@ export default new Vuex.Store({
   },
   strict: true
 })
+
