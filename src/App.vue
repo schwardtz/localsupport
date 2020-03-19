@@ -75,6 +75,10 @@ h1 {
   margin-top: 0;
 }
 
+footer {
+  
+}
+
 footer address {
   font-size: 12px;
   font-style:normal;

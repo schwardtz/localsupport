@@ -15,7 +15,7 @@ export default new Vuex.Store({
   },
   actions: {
     fetchLocations({ commit }) {
-      db.collection("locations").get().then(function (querySnapshot) {
+      db.collection("locations").orderBy("name").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           commit("addLocation", doc.data())
         });

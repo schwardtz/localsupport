@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button @click="changeFilterCategory" :class="{ active:isActive}">{{ category.icon }}</button>
+  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.name">{{ category.icon }}</button>
 </div>
 </template>
 

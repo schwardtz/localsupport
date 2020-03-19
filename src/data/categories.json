@@ -4,11 +4,15 @@
         "icon" : "🍔"
     },
     {
-        "name" : "kleidung",
+        "name" : "shop",
         "icon" : "👕"
     },
     {
         "name" : "bar",
         "icon" : "🥃"
+    },
+    {
+        "name" : "event",
+        "icon" : "👨‍👨‍👦‍👦"
     }
 ]
