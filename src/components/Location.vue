@@ -7,8 +7,8 @@
     </address>
     <content>
        <p> {{data.description}}</p>
-       <a :href="data.contact" :title="data.name">{{data.name}}</a>
-       <a v-if="data.email" :href="'mailto:'+data.email">E-Mail</a>
+       <a rel="noopener nofollow noreferrer" :href="data.contact" :title="data.name">{{data.name}}</a>
+       <a rel="noopener nofollow noreferrer" v-if="data.email" :href="'mailto:'+data.email">E-Mail</a>
     </content>
   </div>
 </template>
