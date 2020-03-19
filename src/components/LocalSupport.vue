@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="content">
     <header>
       <h1>Support you local dealer</h1>
       <p>gutscheine für die gute zeit nach der schlechten zeit</p>
@@ -62,5 +62,8 @@ header {
   background-position: center center;
   background-size: 100% auto;
   margin-bottom: 20px;
+}
+.content {
+  min-height: 80vh;
 }
 </style>

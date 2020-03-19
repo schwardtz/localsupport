@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-      <LocalSupport />
+    <LocalSupport />
+
+    <footer>
+      <address>
+        <h2>Impressum</h2>
+        Johannes Klinger <br/>
+        Freihofstr. 16<br/>
+        60385 Frankfurt<br/>
+        <a href="mailto:mail@johannesklinger.com">mail</a>
+      </address>
+    </footer>
   </div>
 </template>
 
@@ -62,6 +72,20 @@ h1 {
   text-transform: lowercase;
   color: white;
   margin-bottom: 0;
-  margin-top:0;
+  margin-top: 0;
+}
+
+footer address {
+  font-size: 12px;
+  font-style:normal;
+}
+
+footer address h2 {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+footer address a {
+  color: black;
 }
 </style>

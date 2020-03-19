@@ -40,7 +40,12 @@ export default new Vuex.Store({
   getters: {
     getFilteredLocations: state => {
       return state.locations.filter(function (location) {
-        if (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1 && (state.filter.categories.length === 0 || location.categories.map((category => state.filter.categories.indexOf(category) != -1)).indexOf(true) != -1)) {
+        if (
+          (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
+            location.name.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
+            location.description.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
+            location.categories.map((category => category.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1)).indexOf(true)!=-1 )
+          && (state.filter.categories.length === 0 || location.categories.map((category => state.filter.categories.indexOf(category) != -1)).indexOf(true) != -1)) {
           return location;
         }
       })
