@@ -60,7 +60,7 @@ export default {
 content {
   background-color: white;
   display: inline-block;
-  padding: 20px 20px;
+  padding: 20px 20px 5px 20px;
   width: 100%;
   flex: 1;
   text-align: left;

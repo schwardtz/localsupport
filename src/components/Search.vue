@@ -2,8 +2,8 @@
   <div class="search">
     <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="suche" />
     <button class="clear" @click="clearSearch" v-if="remove">&times;</button>
-    <router-link class="link" to="/karte"><img src="./../assets/icons/icons8-map-marker-64.png" alt="Karte"></router-link>
-    <router-link class="link" to="/"><img src="./../assets/icons/icons8-web-64.png" alt="Homepage"></router-link>
+    <router-link class="link" title="Zur Karte" to="/karte"><img src="./../assets/icons/icons8-map-marker-64.png" alt="Karte"></router-link>
+    <router-link class="link" title="Zur Übersicht" to="/"><img src="./../assets/icons/icons8-web-64.png" alt="Homepage"></router-link>
   </div>
 </template>
 
