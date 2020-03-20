@@ -2,36 +2,36 @@
     {
         "name" : "restaurant",
         "description": "Restaurants",
-        "icon" : "🍽"
+        "icon" : "icons8-natural-food-64.png"
     },
     {
         "name" : "shop",
         "description": "Einzelhandel",
-        "icon" : "🛒"
+        "icon" : "icons8-favorite-cart-64.png"
     },
     {
         "name" : "event",
         "description": "Theater&Events",
-        "icon" : "👨‍👨‍👦‍👦"
+        "icon" : "icons8-crowd-64.png"
     },
     {
         "name" : "bar",
         "description": "Bars",
-        "icon" : "🍻"
+        "icon" : "icons8-cocktail-64.png"
     },
     {
         "name" : "cafe",
         "description": "Cafés",
-        "icon" : "☕"
+        "icon" : "icons8-cafe-64.png"
     },
     {
         "name" : "creative",
         "description": "Kreativschaffende",
-        "icon" : "🎨"
+        "icon" : "icons8-paint-palette-64.png"
     },
     {
         "name" : "services",
         "description": "Dienstleistungen",
-        "icon" : "🛠️"
+        "icon" : "icons8-hammer-64.png"
     }
 ]

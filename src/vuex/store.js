@@ -33,6 +33,7 @@ export default new Vuex.Store({
       state.filter.search = searchText
     },
     addLocation(state, location) {
+      location.geolocation=[location.location.latitude,location.location.longitude]
       state.locations.push(location)
     }
   },

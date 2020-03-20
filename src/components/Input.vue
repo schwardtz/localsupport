@@ -34,6 +34,16 @@
 
 <script>
 import db from "./../firebase/db.js";
+import Geocoder from "@pderas/vue2-geocoder";
+import Vue from "vue";
+import firebase from 'firebase/app'
+
+Vue.use(Geocoder, {
+  defaultCountryCode: "DE", // e.g. 'CA'
+  defaultLanguage: "DE", // e.g. 'en'
+  defaultMode: "address", // or 'lat-lng'
+  googleMapsApiKey: "AIzaSyDDbgCoG9fZGvw_vs9_8aw3Rz_O_2OdEb0"
+});
 
 export default {
   name: "Input",
@@ -50,7 +60,8 @@ export default {
       street: "",
       city: "",
       categories: "",
-      image: ""
+      image: "",
+      location: ""
     };
   },
   computed: {
@@ -66,28 +77,41 @@ export default {
         street: this.street,
         city: this.city,
         categories: this.categories.split(","),
-        image: this.image
+        image: this.image,
+        location: this.location
       };
     }
   },
   methods: {
     putDataToFirestore(event) {
       event.preventDefault();
+      const locationToSend = this.putTogetherLocation;
+
+      var addressObj = {
+        address_line_1: locationToSend.street,
+        city: locationToSend.city,
+        country: "Germany"
+      };
+
+      Vue.$geocoder.send(addressObj, response => {
+        locationToSend.location = new firebase.firestore.GeoPoint(response.results[0].geometry.location.lat, response.results[0].geometry.location.lng);
       db.collection("locations")
-        .doc(this.email)
-        .set(this.putTogetherLocation)
-        .then(function() {
-          console.log("Document successfully written!");
-        });
-      this.name = "";
-      this.website = "";
-      this.email = "";
-      this.phone = "";
-      this.facebook = "";
-      this.instagram = "";
-      this.description = "";
-      this.street = "";
-      this.city = "";
+          .doc(this.email)
+          .set(locationToSend)
+          .then(function() {
+            console.log(locationToSend);
+            console.log("Document successfully written!");
+          });
+        this.name = "";
+        this.website = "";
+        this.email = "";
+        this.phone = "";
+        this.facebook = "";
+        this.instagram = "";
+        this.description = "";
+        this.street = "";
+        this.city = "";
+      });
     }
   }
 };

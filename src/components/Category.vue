@@ -1,11 +1,11 @@
 <template>
 <div>
-  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description">{{ category.icon }}</button>
+  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description"><img :src="'./../assets/icons/'+category.icon" /></button>
 </div>
 </template>
 
 <script>
-import router from "../router/router.js"
+// import router from "../router/router.js"
 export default {
   name: "Category",
   props: {
@@ -18,7 +18,7 @@ export default {
         } else {
           this.isActive = false
         }
-        router.push("/").catch(err => {console.log(err)})
+        // router.push("/").catch(err => {console.log(err)})
         this.$store.commit('addCategoryFilter', this.category.name)
     }
   },
@@ -37,6 +37,8 @@ button {
   padding: 5px;
   cursor: pointer;
   transition: background-color 1s;
+  width: 40px;
+  background-color:rgba(255,255,255,0);
 }
 
 button:hover{
@@ -44,5 +46,10 @@ button:hover{
 }
 button.active{
   background-color: rgba(255,200,200,1);
+}
+
+img {
+  width: 24px;
+  height: 24px;
 }
 </style>

@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <!-- <router-view></router-view> -->
     <LocalSupport />
     <footer>
       <address>
-        <h2>Impressum</h2>
-        Johannes Klinger <br/>
-        Freihofstr. 16<br/>
-        60385 Frankfurt<br/>
-        Kontakt: <a href="mailto:mail@johannesklinger.com">E-Mail</a>
+        <h2>Impressum</h2>Johannes Klinger
+        <br />Freihofstr. 16
+        <br />60385 Frankfurt
+        <br />Kontakt:
+        <a href="mailto:mail@johannesklinger.com">E-Mail</a>
       </address>
+      <a
+        href="https://icons8.com/icons"
+        title="Icons von icons8"
+      >Alle Icons von https://icons8.com/icons</a>
     </footer>
   </div>
 </template>
 
 <script>
-import LocalSupport from "./components/LocalSupport.vue";
+const LocalSupport = () => import("./components/LocalSupport.vue");
 
 export default {
   name: "App",
   components: {
-    LocalSupport
+    LocalSupport,
   },
   computed: {
     filter() {
       return this.$store.state.filter;
+    },
+    locations() {
+      return this.$store.getters.getFilteredLocations;
     }
-  }
+  },
 };
 </script>
 
@@ -51,7 +57,7 @@ body {
 
 * {
   box-sizing: border-box;
-  color: rgba(80,80,80,1);
+  color: rgba(80, 80, 80, 1);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -85,7 +91,7 @@ footer {
 
 footer address {
   font-size: 12px;
-  font-style:normal;
+  font-style: normal;
 }
 
 footer address h2 {
@@ -93,7 +99,12 @@ footer address h2 {
   font-size: 12px;
 }
 
-footer address a {
+footer a {
   color: black;
+  font-size: 12px;
+}
+
+p {
+  color: rgba(80, 80, 80, 1);
 }
 </style>

@@ -3,7 +3,7 @@
     <header>
       <div>
         <h1>
-          <router-link to="/">Support you local Einzelhandel</router-link>
+          <router-link to="/">Support your local Einzelhandel</router-link>
         </h1>
         <Search />
         <Categories v-on:category-locations="filterLocationsByCategory" />
@@ -23,9 +23,8 @@
 </template>
 
 <script>
-import Categories from "./Categories.vue";
-import Search from "./Search.vue";
-
+const Categories = () => import('./Categories.vue')
+const Search = () => import('./Search.vue')
 export default {
   name: "LocalSupport",
   components: {
@@ -113,10 +112,10 @@ p {
   p {
     margin-top: 10px;
   }
-}
+} 
 
 p a {
-  border-bottom: 1px solid rgba(255, 180, 180, 1);
+  border-bottom: 1px solid rgba(180, 180, 255, 1);
   text-decoration: none;
   color: rgba(180, 180, 255, 1);
 }

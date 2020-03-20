@@ -13,7 +13,7 @@
 
 
 <script>
-import Location from "./Location.vue";
+const Location = () => import('./Location.vue')
 
 export default {
   name: "Locations",
@@ -39,7 +39,7 @@ export default {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: center;
-  grid-auto-rows: 1fr;
+  /* grid-auto-rows: 1fr; */
   max-width: 80vw;
   margin: 0 auto;
 }

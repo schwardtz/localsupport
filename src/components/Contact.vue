@@ -2,7 +2,7 @@
   <div>
     <form action @submit="checkForm">
       <h3>Kontakt</h3>
-      <ul class="notifications">
+      <ul class="notifications" v-if="notifications.length>0">
         <li v-for="notification in notifications" :key="notification.name">{{ notification }}</li>
       </ul>
       <small>*Pflichtfeld</small>
