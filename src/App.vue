@@ -1,14 +1,14 @@
 <template>
   <div id="app">
+    <!-- <router-view></router-view> -->
     <LocalSupport />
-
     <footer>
       <address>
         <h2>Impressum</h2>
         Johannes Klinger <br/>
         Freihofstr. 16<br/>
         60385 Frankfurt<br/>
-        <a href="mailto:mail@johannesklinger.com">mail</a>
+        Kontakt: <a href="mailto:mail@johannesklinger.com">E-Mail</a>
       </address>
     </footer>
   </div>
@@ -34,6 +34,9 @@ export default {
 html,
 body {
   background-color: rgb(240, 240, 250);
+  background-image: url("./assets/background/blob-shape.svg");
+  background-repeat: no-repeat;
+  background-position: -200px 150%;
   /* background-color: #ffac81;
   background-image: linear-gradient(
     315deg,
@@ -48,6 +51,7 @@ body {
 
 * {
   box-sizing: border-box;
+  color: rgba(80,80,80,1);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -76,7 +80,7 @@ h1 {
 }
 
 footer {
-  
+  margin: 20px 0;
 }
 
 footer address {

@@ -7,10 +7,13 @@
 
 <script>
 import store from "../vuex/store.js";
+import router from "../router/router.js"
+
 export default {
   name: "Search",
   methods: {
     changeFilterSearch() {
+      router.push("/").catch(err => {console.log(err)})
       store.commit("searchFilter", this.search);
     },
     clearSearch: function() {
@@ -40,12 +43,14 @@ input {
   width: 300px;
   position: relative;
   z-index: 0;
+  background: rgba(255,255,255,0.3);
 }
 
 .search {
   position: relative;
   width: 300px;
   margin: 0 auto;
+  margin-top: 15px;
 }
 
 .clear {

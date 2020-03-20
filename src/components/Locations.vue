@@ -74,9 +74,13 @@ export default {
 .list-move {
   transition: all 1s;
 }
-
-.list-leave-active {
-  position: absolute;
-  max-width: 19%;
+@media screen and (min-width: 1200px){
+  .list-leave-active {
+    max-width: 19%;
+  }
 }
+.list-leave-active {
+    position: absolute;
+    max-width: 80vw;
+  }
 </style>

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import LocationsData from "../data/locations.json";
 import db from "./../firebase/db.js"
 
 Vue.use(Vuex)

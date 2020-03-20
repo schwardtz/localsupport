@@ -1,18 +1,37 @@
 [
     {
         "name" : "restaurant",
-        "icon" : "🍔"
+        "description": "Restaurants",
+        "icon" : "🍽"
     },
     {
         "name" : "shop",
-        "icon" : "👕"
-    },
-    {
-        "name" : "bar",
-        "icon" : "🥃"
+        "description": "Einzelhandel",
+        "icon" : "🛒"
     },
     {
         "name" : "event",
+        "description": "Theater&Events",
         "icon" : "👨‍👨‍👦‍👦"
+    },
+    {
+        "name" : "bar",
+        "description": "Bars",
+        "icon" : "🍻"
+    },
+    {
+        "name" : "cafe",
+        "description": "Cafés",
+        "icon" : "☕"
+    },
+    {
+        "name" : "creative",
+        "description": "Kreativschaffende",
+        "icon" : "🎨"
+    },
+    {
+        "name" : "services",
+        "description": "Dienstleistungen",
+        "icon" : "🛠️"
     }
 ]
