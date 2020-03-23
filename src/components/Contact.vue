@@ -91,9 +91,8 @@ export default {
   methods: {
     putDataToFirestore(event) {
       event.preventDefault();
-
       db.collection("contacts")
-        .doc()
+        .doc(this.putTogetherLocation.email)
         .set(this.putTogetherLocation)
         .then(function() {
           console.log("Document successfully written!");

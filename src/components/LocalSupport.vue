@@ -5,17 +5,29 @@
         <h1>
           <router-link to="/">Support your local Einzelhandel</router-link>
         </h1>
-        <Search />
-        <Categories v-on:category-locations="filterLocationsByCategory" />
+        <div class="search-desktop">
+          <Search />
+          <Categories v-on:category-locations="filterLocationsByCategory" />
+        </div>
       </div>
       <div>
         <p>
           Schön, dass du hier bist! Du führst ein Restaurant oder einen Shop und bietest aktuell Gutscheine an, nimmst Bestellungen entgegen, oder lieferst Waren aus? Das finden wir ziemlich großartig. Wenn du hier mit deinem Angebot gelistet werden möchtest, schreib uns einfach eine
-          <a href="mailto:mail@johannesklinger.com">Mail</a> mit Infos und Links zu deinem Angebot, oder füll unser
+          <a
+            href="mailto:mail@johannesklinger.com"
+          >Mail</a> mit Infos und Links zu deinem Angebot, oder füll' unser
           <router-link to="contact">Formular</router-link> aus. Das ganze kostet dich nichts und bringt uns keine Kohle. So machen wir uns gemeinsam die schlechte Zeit zusammen ein bisschen besser. Wir freuen uns!
+        </p>
+        <p>
+          Wenn euer Lieblingsgeschäft nicht dabei ist, ruft im Zweifel einfach dort an.
+          <br />Unserer Erfahrung nach bieten sehr viele Shops und Restaurants außergewöhliche Lösungen für die aktuelle Situation an.
         </p>
       </div>
     </header>
+    <div class="search-mobile">
+      <Search />
+      <Categories v-on:category-locations="filterLocationsByCategory" />
+    </div>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -23,8 +35,9 @@
 </template>
 
 <script>
-const Categories = () => import('./Categories.vue')
-const Search = () => import('./Search.vue')
+const Categories = () => import("./Categories.vue");
+const Search = () => import("./Search.vue");
+
 export default {
   name: "LocalSupport",
   components: {
@@ -49,6 +62,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.search-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .search-mobile {
+    display: block;
+  }
+  .search-desktop {
+    display: none;
+  }
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -87,9 +112,21 @@ header > div {
   min-height: 80vh;
 }
 
+@font-face {
+  font-family: "bargain_demoregular";
+  src: url("./../assets/fonts/webfontkit-20200322-162147/bargain_demo-webfont.woff2")
+      format("woff2"),
+    url("./../assets/fonts/webfontkit-20200322-162147/bargain_demo-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1 {
   color: rgba(255, 180, 180, 1);
   display: inline;
+  font-family: "bargain_demoregular";
+  text-shadow: 1px 1px 1px rgb(236, 2, 2);
 }
 
 h1 a,
@@ -102,22 +139,25 @@ h1 a:focus {
 
 p {
   color: rgba(80, 80, 80, 1);
-  margin: 10px 0 20px;
+  margin: 20px 0 10px;
   text-align: justify;
   padding-left: 5px;
-  margin-top: 30px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   p {
     margin-top: 10px;
   }
-} 
+}
 
 p a {
   border-bottom: 1px solid rgba(180, 180, 255, 1);
   text-decoration: none;
   color: rgba(180, 180, 255, 1);
+}
+
+p + p {
+  margin-top: 0;
 }
 .fade-enter-active,
 .fade-leave-active {

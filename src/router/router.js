@@ -1,14 +1,14 @@
 
 import VueRouter from 'vue-router'
 
-import Contact from "./../components/Contact.vue"
-import Locations from "./../components/Locations.vue";
-import Map from "./../components/Map.vue";
-import Input from "./../components/Input.vue";
+const Contact =()=> import("./../components/Contact.vue")
+const Locations =()=> import("./../components/Locations.vue")
+const Map =()=> import("./../components/Map.vue")
+const Input =()=> import("./../components/Input.vue")
 const routes = [
-  { path: '/', name:'home', component: Locations },
+  { path: '/', name:'home', component: Map },
   { path: '/contact', name:'contact', component: Contact },
-  { path: '/karte', name:'map', component: Map },
+  { path: '/overview', name:'Locations', component: Locations },
   { path: '/input', name:'input', component: Input },
 ]
 

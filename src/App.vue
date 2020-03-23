@@ -12,7 +12,8 @@
       <a
         href="https://icons8.com/icons"
         title="Icons von icons8"
-      >Alle Icons von https://icons8.com/icons</a>
+      >Alle Icons von https://icons8.com/icons</a><br />
+      <a href="https://www.dafont.com/de/bargain.font" title="Font für Überschrift">Schriftart der Überschrift von https://www.dafont.com/de/bargain.font</a>
     </footer>
   </div>
 </template>
@@ -25,14 +26,6 @@ export default {
   components: {
     LocalSupport,
   },
-  computed: {
-    filter() {
-      return this.$store.state.filter;
-    },
-    locations() {
-      return this.$store.getters.getFilteredLocations;
-    }
-  },
 };
 </script>
 
@@ -43,12 +36,6 @@ body {
   background-image: url("./assets/background/blob-shape.svg");
   background-repeat: no-repeat;
   background-position: -200px 150%;
-  /* background-color: #ffac81;
-  background-image: linear-gradient(
-    315deg,
-    rgb(255, 146, 139) 0%,
-    rgb(247, 210, 190) 74%
-  ); */
   height: 100vh;
   background-attachment: fixed;
   margin: 0;
@@ -59,6 +46,7 @@ body {
   box-sizing: border-box;
   color: rgba(80, 80, 80, 1);
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -106,5 +94,32 @@ footer a {
 
 p {
   color: rgba(80, 80, 80, 1);
+}
+
+.leaflet-marker-icon {
+  height: 30px!important;
+}
+
+.leaflet-popup-content-wrapper content {
+  box-shadow: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.leaflet-pane .leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-pane .leaflet-popup-content div {
+  border-radius: 12px;
+}
+
+.leaflet-pane .leaflet-popup-content content::after {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.leaflet-tile-container{
+  transition: all 1s;
 }
 </style>

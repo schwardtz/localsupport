@@ -8,8 +8,8 @@
 
 
 <script>
-import CategoriesData from "../data/categories.json";
-const Category = () => import("./../components/Category.vue");
+import CategoriesData from "../data/categories.json"
+const Category =()=>import("./Category.vue")
 
 export default {
   name: "Categories",

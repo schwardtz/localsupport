@@ -1,22 +1,22 @@
 [
     {
         "name" : "restaurant",
-        "description": "Restaurants",
+        "description": "Essen",
         "icon" : "icons8-natural-food-64.png"
     },
     {
         "name" : "shop",
-        "description": "Einzelhandel",
+        "description": "Einkaufen",
         "icon" : "icons8-favorite-cart-64.png"
     },
     {
         "name" : "event",
-        "description": "Theater&Events",
+        "description": "Erleben",
         "icon" : "icons8-crowd-64.png"
     },
     {
         "name" : "bar",
-        "description": "Bars",
+        "description": "Trinken",
         "icon" : "icons8-cocktail-64.png"
     },
     {
@@ -30,8 +30,8 @@
         "icon" : "icons8-paint-palette-64.png"
     },
     {
-        "name" : "services",
-        "description": "Dienstleistungen",
-        "icon" : "icons8-hammer-64.png"
+        "name" : "buch",
+        "description": "Lesen",
+        "icon" : "icons8-book-64.png"
     }
 ]

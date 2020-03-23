@@ -67,17 +67,17 @@ export default {
   computed: {
     putTogetherLocation: function() {
       return {
-        name: this.name,
-        website: this.website,
-        email: this.email,
-        phone: this.phone,
-        facebook: this.facebook,
-        instagram: this.instagram,
-        description: this.description,
-        street: this.street,
-        city: this.city,
+        name: this.name.trim(),
+        website: this.website.trim(),
+        email: this.email.trim(),
+        phone: this.phone.trim(),
+        facebook: this.facebook.trim(),
+        instagram: this.instagram.trim(),
+        description: this.description.trim(),
+        street: this.street.trim(),
+        city: this.city.trim(),
         categories: this.categories.split(","),
-        image: this.image,
+        image: this.image.trim(),
         location: this.location
       };
     }

@@ -3,10 +3,12 @@
     <l-map
       style="height: 100%; width: 100%"
       :zoom="zoom"
-      :center="center"
-      @update:zoom="zoomUpdated"
+      :center="zoomLocation"
+      :zoomAnimation="true"
       @update:center="centerUpdated"
+      @update:zoom="zoomUpdated"
       @update:bounds="boundsUpdated"
+      ref="map"
     >
       <l-tile-layer :url="url"></l-tile-layer>
       <l-marker v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
@@ -16,17 +18,18 @@
           icon-url="./../assets/icons/icons8-marker-40.png"
         ></l-icon>
         <l-popup>
-          <LocationContent :data="location" />
+          <Location :data="location" />
         </l-popup>
+        <l-tooltip>{{location.name}}!</l-tooltip>
       </l-marker>
     </l-map>
   </div>
 </template>
 
 <script>
-const LocationContent = () => import("./LocationContent.vue");
+const Location = () => import("./Location.vue");
 
-import { LMap, LTileLayer, LPopup, LIcon } from "vue2-leaflet";
+import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet";
 export default {
   name: "Map",
   components: {
@@ -34,7 +37,8 @@ export default {
     LTileLayer,
     LPopup,
     LIcon,
-    LocationContent
+    Location,
+    LTooltip
   },
   computed: {
     filter() {
@@ -42,6 +46,13 @@ export default {
     },
     locations() {
       return this.$store.getters.getFilteredLocations;
+    },
+    zoomLocation() {
+      if (this.$store.getters.getZoomLocation) {
+        return this.$store.getters.getZoomLocation.geolocation;
+      } else {
+        return [50.627542, 9.95845];
+      }
     },
     dynamicSize() {
       return [this.iconSize, this.iconSize * 1.15];
@@ -53,8 +64,7 @@ export default {
   data() {
     return {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      zoom: 5,
-      center: [50.627542, 9.95845],
+      zoom: 6,
       bounds: null,
       iconSize: 30
     };
@@ -64,7 +74,12 @@ export default {
       this.zoom = zoom;
     },
     centerUpdated(center) {
-      this.center = center;
+      this.center = [center.lat, center.lng];
+      if (center.lat == "50.627542") {
+        this.zoom = 6;
+      } else {
+        this.zoom = 11;
+      }
     },
     boundsUpdated(bounds) {
       this.bounds = bounds;
@@ -75,7 +90,7 @@ export default {
 
 <style scoped>
 .map {
-  height: 60vh;
+  height: 70vh;
   min-height: 500px;
   width: 100%;
 }
@@ -89,6 +104,14 @@ export default {
 }
 
 .leaflet-marker-icon {
-  height: 30px!important;
+  height: 30px !important;
+}
+
+.leaflet-popup-content-wrapper content {
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 0;
 }
 </style>

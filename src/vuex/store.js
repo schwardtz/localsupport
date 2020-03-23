@@ -10,7 +10,7 @@ export default new Vuex.Store({
       categories: [],
       search: ''
     },
-    locations: []
+    locations: [],
   },
   actions: {
     fetchLocations({ commit }) {
@@ -33,7 +33,7 @@ export default new Vuex.Store({
       state.filter.search = searchText
     },
     addLocation(state, location) {
-      location.geolocation=[location.location.latitude,location.location.longitude]
+      location.geolocation = [location.location.latitude, location.location.longitude]
       state.locations.push(location)
     }
   },
@@ -41,10 +41,10 @@ export default new Vuex.Store({
     getFilteredLocations: state => {
       return state.locations.filter(function (location) {
         if (
-          (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
-            location.name.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
-            location.description.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1||
-            location.categories.map((category => category.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1)).indexOf(true)!=-1 )
+          (location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1 ||
+            location.name.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1 ||
+            location.description.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1 ||
+            location.categories.map((category => category.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1)).indexOf(true) != -1)
           && (state.filter.categories.length === 0 || location.categories.map((category => state.filter.categories.indexOf(category) != -1)).indexOf(true) != -1)) {
           return location;
         }
@@ -55,6 +55,14 @@ export default new Vuex.Store({
     },
     getCategoryFilter: state => {
       return state.filter.categories;
+    },
+    getZoomLocation: state => {
+      return state.locations.filter(function (location) {
+        if (state.filter.search.length>=4&&location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1) {
+
+          return location
+        }
+      })[0]
     }
   },
   strict: true

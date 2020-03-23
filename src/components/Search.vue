@@ -1,23 +1,22 @@
 <template>
   <div class="search">
-    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="suche" />
+    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="suchen" />
     <button class="clear" @click="clearSearch" v-if="remove">&times;</button>
-    <router-link class="link" title="Zur Karte" to="/karte"><img src="./../assets/icons/icons8-map-marker-64.png" alt="Karte"></router-link>
-    <router-link class="link" title="Zur Übersicht" to="/"><img src="./../assets/icons/icons8-web-64.png" alt="Homepage"></router-link>
+    <router-link class="link" title="Zur Karte" to="/">
+      <img src="./../assets/icons/icons8-map-marker-64.png" alt="Karte" />
+    </router-link>
+    <router-link class="link" title="Zur Übersicht" to="/overview">
+      <img src="./../assets/icons/icons8-web-64.png" alt="Homepage" />
+    </router-link>
   </div>
 </template>
 
 <script>
 import store from "../vuex/store.js";
-// import router from "../router/router.js";
-
 export default {
   name: "Search",
   methods: {
     changeFilterSearch() {
-      // router.push("/").catch(err => {
-      //   console.log(err);
-      // });
       store.commit("searchFilter", this.search);
     },
     clearSearch: function() {
@@ -32,7 +31,7 @@ export default {
   },
   computed: {
     remove() {
-      return this.search.length>0?true:false
+      return this.search.length > 0 ? true : false;
     }
   }
 };
@@ -46,9 +45,10 @@ export default {
 }
 
 .link {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-left: 10px;
+  margin-top: 3px;
 }
 
 .link img {
@@ -67,17 +67,25 @@ input {
   height: 40px;
 }
 
+@media screen and (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+}
+
 .search {
   position: relative;
-  width: 300px;
+  width: 400px;
+  max-width: 80vw;
   margin: 0 auto;
   margin-top: 15px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .clear {
   position: absolute;
-  right: 0px;
+  right: 98px;
   background: none;
   border: none;
   font-size: 18px;
@@ -85,9 +93,15 @@ input {
   display: inline-block;
   cursor: pointer;
   height: 35px;
-  top: 0px;
+  top: 3px;
   width: 35px;
   z-index: 1;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 600px) {
+  .clear {
+    right: 0;
+  }
 }
 </style>
