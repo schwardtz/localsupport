@@ -4,3 +4,4 @@ vue.config.js
 .env.development.local
 credentials.js
 firebase/app.js
+node_modules_bak
