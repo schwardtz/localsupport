@@ -10,6 +10,9 @@
       <input type="text" v-model="name" name="name" />
       <label for="description">Was bietet ihr an?*</label>
       <textarea v-model="description" name="description"></textarea>
+      <label for="name">Unter welchen Kategorien möchtet ihr gefunden werden (kommagetrennt)?*</label>
+      <input type="text" v-model="categories" name="categories" placeholder="bspw. einkaufen,essen,bücher"/>
+     
       <h3>Wie können Menschen mit euch in Kontakt treten?</h3>
       <div class="contact">
         <div class="column">

@@ -36,10 +36,10 @@ export default {
 .locations {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   justify-content: center;
-  max-width: 80vw;
+  max-width: 95vw;
   margin: 0 auto;
 }
 

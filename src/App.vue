@@ -33,9 +33,9 @@ export default {
 html,
 body {
   background-color: rgb(240, 240, 250);
-  background-image: url("./assets/background/blob-shape.svg");
+  background-image: url("./assets/background/blob-shape.svg"), url("./assets/background/blob-shape_one.svg");
   background-repeat: no-repeat;
-  background-position: -200px 150%;
+  background-position: -10vw 60vh, 80vw 10vh;
   height: 100vh;
   background-attachment: fixed;
   margin: 0;
@@ -114,9 +114,14 @@ p {
   border-radius: 12px;
 }
 
-.leaflet-pane .leaflet-popup-content content::after {
+.leaflet-pane .leaflet-popup-content content::after, .leaflet-pane address {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+
+.leaflet-pane address {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .leaflet-tile-container{

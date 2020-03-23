@@ -108,7 +108,8 @@ export default {
   transition: all 0.7s ease-out;
   outline: none;
   height: 100%;
-  box-shadow: 0 0 5px 0 rgba(80, 80, 80, 0.3);
+  border: 1px solid rgb(200, 200, 255);
+;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,9 +179,6 @@ address {
     background-size: 150%;
   background-position: -170px -180px;
   transition: all 0.7s ease-out;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-
 }
 
 address span {
