@@ -11,6 +11,8 @@
       ref="map"
     >
       <l-tile-layer :url="url"></l-tile-layer>
+        <v-marker-cluster :options="{maxClusterRadius: 20}">
+
       <l-marker v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
         <l-icon
           :icon-size="dynamicSize"
@@ -22,14 +24,17 @@
         </l-popup>
         <l-tooltip>{{location.name}}!</l-tooltip>
       </l-marker>
+        </v-marker-cluster>
     </l-map>
   </div>
 </template>
 
 <script>
-const Location = () => import("./Location.vue");
+const Location = () => import("./Location.vue")
 
-import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet";
+import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet"
+const Vue2LeafletMarkerCluster =()=>import('vue2-leaflet-markercluster')
+
 export default {
   name: "Map",
   components: {
@@ -38,7 +43,8 @@ export default {
     LPopup,
     LIcon,
     Location,
-    LTooltip
+    LTooltip,
+    'v-marker-cluster': Vue2LeafletMarkerCluster
   },
   computed: {
     filter() {
@@ -75,7 +81,7 @@ export default {
     },
     centerUpdated(center) {
       this.center = [center.lat, center.lng];
-      if (center.lat == "50.627542") {
+      if (center.lat == "50.627542" || this.zoomLocation[0] == "50.627542" ) {
         this.zoom = 6;
       } else {
         this.zoom = 11;
@@ -89,6 +95,8 @@ export default {
 </script>
 
 <style scoped>
+@import "~leaflet.markercluster/dist/MarkerCluster.css";
+@import "~leaflet.markercluster/dist/MarkerCluster.Default.css";
 .map {
   height: 70vh;
   min-height: 500px;

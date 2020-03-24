@@ -1,6 +1,6 @@
 import Firebase from 'firebase/app'
 var firebaseConfig = {
-    apiKey: "AIzaSyA698dsY7FHMRks7MYU226oxEFyraMtw6I",
+    apiKey: "AIzaSyA698dY7FHMRks7MYU226oxEFyraMtw6I",
     authDomain: "support-your-local-dealer.firebaseapp.com",
     databaseURL: "https://support-your-local-dealer.firebaseio.com",
     projectId: "support-your-local-dealer",

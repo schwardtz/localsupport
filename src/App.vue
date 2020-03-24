@@ -2,18 +2,31 @@
   <div id="app">
     <LocalSupport />
     <footer>
-      <address>
-        <h2>Impressum</h2>Johannes Klinger
-        <br />Freihofstr. 16
-        <br />60385 Frankfurt
-        <br />Kontakt:
-        <a href="mailto:mail@johannesklinger.com">E-Mail</a>
-      </address>
-      <a
-        href="https://icons8.com/icons"
-        title="Icons von icons8"
-      >Alle Icons von https://icons8.com/icons</a><br />
-      <a href="https://www.dafont.com/de/bargain.font" title="Font für Überschrift">Schriftart der Überschrift von https://www.dafont.com/de/bargain.font</a>
+      <div>
+        <h2>Unterstützenswerte Projekte</h2>
+        <ul>
+            <li><a href="https://supportyourlocalbar.com/" title="Support your local bar">support your local bar</a></li>
+            <li><a href="http://helfen.berlin/" title="helfen.berlin">Helfen.Berlin</a></li>
+          </ul>
+        </div>
+      <div>
+        <address>
+          <h2>Impressum</h2>Johannes Klinger
+          <br />Freihofstr. 16
+          <br />60385 Frankfurt
+          <br />Kontakt:
+          <a href="mailto:mail@johannesklinger.com">E-Mail</a>
+        </address>
+        <a
+          href="https://icons8.com/icons"
+          title="Icons von icons8"
+        >Alle Icons von https://icons8.com/icons</a>
+        <br />
+        <a
+          href="https://www.dafont.com/de/bargain.font"
+          title="Font für Überschrift"
+        >Schriftart der Überschrift von <br/> https://www.dafont.com/de/bargain.font</a>
+      </div>
     </footer>
   </div>
 </template>
@@ -24,8 +37,8 @@ const LocalSupport = () => import("./components/LocalSupport.vue");
 export default {
   name: "App",
   components: {
-    LocalSupport,
-  },
+    LocalSupport
+  }
 };
 </script>
 
@@ -33,7 +46,8 @@ export default {
 html,
 body {
   background-color: rgb(240, 240, 250);
-  background-image: url("./assets/background/blob-shape.svg"), url("./assets/background/blob-shape_one.svg");
+  background-image: url("./assets/background/blob-shape.svg"),
+    url("./assets/background/blob-shape_one.svg");
   background-repeat: no-repeat;
   background-position: -10vw 60vh, 80vw 10vh;
   height: 100vh;
@@ -82,7 +96,27 @@ footer address {
   font-style: normal;
 }
 
-footer address h2 {
+footer {
+ margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  justify-content: center;
+}
+
+footer div {
+  padding: 0 20px;
+}
+
+footer div ul {
+  list-style: none;
+  margin:0;
+  padding: 0;
+}
+
+footer h2 {
   margin-bottom: 5px;
   font-size: 12px;
 }
@@ -90,14 +124,17 @@ footer address h2 {
 footer a {
   color: black;
   font-size: 12px;
+  display: inline-block;
+  margin-bottom: 5px;
 }
+
 
 p {
   color: rgba(80, 80, 80, 1);
 }
 
 .leaflet-marker-icon {
-  height: 30px!important;
+  height: 30px !important;
 }
 
 .leaflet-popup-content-wrapper content {
@@ -114,7 +151,7 @@ p {
   border-radius: 12px;
 }
 
-.leaflet-pane .leaflet-popup-content content::after, .leaflet-pane address {
+.leaflet-pane .leaflet-popup-content content::after {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -124,7 +161,37 @@ p {
   border-top-right-radius: 12px;
 }
 
-.leaflet-tile-container{
+.leaflet-tile-container {
   transition: all 1s;
 }
+
+.map .marker-cluster-small {
+	background-color: rgba(142, 209, 252,0.6);
+}
+.map .marker-cluster-small div {
+	background-color: rgba(142, 209, 252,0.6);
+}
+.map .marker-cluster-medium {
+	background-color: rgba(252, 185,0, 0.6);
+}
+.map .marker-cluster-medium div {
+	background-color: rgba(252, 185,0, 0.6);
+}
+.map .marker-cluster-large {
+	background-color: rgba(255, 180, 188,0.6);
+}
+.map .marker-cluster-large div {
+	background-color: rgba(255, 180, 188,0.6);
+}
+
+.map .marker-cluster span {
+  color: rgba(100,100,100,1);
+}
+
+.map .leaflet-container a.leaflet-popup-close-button {
+  color: white;
+  top: 5px;
+  right: 5px;
+}
+
 </style>

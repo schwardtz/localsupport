@@ -14,7 +14,7 @@
           rel="noopener nofollow noreferrer"
           target="_blank"
           v-if="data.website"
-          :href="data.website"
+          :href="protocolAttachedWebsite"
           :title="'Website: '+data.name"
         >
           <img src="./../assets/icons/icons8-website-64.png" />
@@ -31,7 +31,7 @@
           rel="noopener nofollow noreferrer"
           v-if="data.phone"
           title="Anrufen"
-          :href="'tel:'+data.phone"
+          :href="'tel:'+cleanedUpPhoneNumber"
         >
           <img src="./../assets/icons/icons8-call-64.png" />
         </a>
@@ -96,6 +96,14 @@ export default {
     this.horizontalPositionOne = "-170px";
     this.verticalPositionTwo = Math.floor(Math.random() * (60 - 30 + 1)) + 30;
     this.horizontalPositionTwo = Math.round(Math.random() * 100);
+  },
+  computed: {
+    protocolAttachedWebsite() {
+      return this.data.website.indexOf("http")>-1?this.data.website.trim():"http://"+this.data.website.trim()
+    },
+    cleanedUpPhoneNumber() {
+      return this.data.phone.replace(/\(|-|\)| |\./gi, "")
+    },
   }
 };
 </script>
@@ -108,8 +116,6 @@ export default {
   transition: all 0.7s ease-out;
   outline: none;
   height: 100%;
-  border: 1px solid rgb(200, 200, 255);
-;
   display: flex;
   flex-direction: column;
   justify-content: center;

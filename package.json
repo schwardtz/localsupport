@@ -10,13 +10,18 @@
   "dependencies": {
     "@pderas/vue2-geocoder": "^1.1.0",
     "core-js": "^3.6.4",
+    "dns": "^0.2.2",
     "es6-promise": "^4.2.8",
     "es7-object-polyfill": "^1.0.1",
     "firebase": "^7.11.0",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.5.0",
+    "http2": "^3.3.7",
     "leaflet": "^1.6.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vue2-leaflet": "^2.5.2",
+    "vue2-leaflet-markercluster": "^3.1.0",
     "vuefire": "^2.2.2",
     "vuex": "^3.1.3"
   },
