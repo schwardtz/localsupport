@@ -3,7 +3,7 @@
     <header>
       <div>
         <h1>
-          <router-link to="/">Support your local Einzelhandel</router-link>
+          <router-link to="/"><img src="../assets/logo.png" alt="Logo Support your local Einzelhandel"/>Support your local Einzelhandel</router-link>
         </h1>
         <div class="search-desktop">
           <TheSearch />
@@ -112,21 +112,16 @@ header > div {
   min-height: 80vh;
 }
 
-@font-face {
-  font-family: "bargain_demoregular";
-  src: url("./../assets/fonts/webfontkit-20200322-162147/bargain_demo-webfont.woff2")
-      format("woff2"),
-    url("./../assets/fonts/webfontkit-20200322-162147/bargain_demo-webfont.woff")
-      format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 h1 {
-  color: rgba(255, 180, 180, 1);
-  display: inline;
-  font-family: "bargain_demoregular";
-  text-shadow: 1px 1px 1px rgb(236, 2, 2);
+  display: inline-block;
+  font-size: 0;
+  max-width: 350px;
+  width: 100%;
+}
+h1 img {
+  width: 100%;
 }
 
 h1 a,

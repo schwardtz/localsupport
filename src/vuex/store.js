@@ -14,9 +14,11 @@ export default new Vuex.Store({
   },
   actions: {
     fetchLocations({ commit }) {
-      db.collection("locations").orderBy("name").get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          commit("addLocation", doc.data())
+      const collection = db.reference("locations");
+      collection.get({pageSize:200}).then(function (querySnapshot) {
+        console.log(querySnapshot)
+        querySnapshot.documents.forEach(function (doc) {
+          commit("addLocation", doc)
         });
       });
     }
@@ -33,7 +35,11 @@ export default new Vuex.Store({
       state.filter.search = searchText
     },
     addLocation(state, location) {
-      location.geolocation = [location.location.latitude, location.location.longitude]
+      if(location.location.latitude!=undefined) {
+        location.geolocation = [location.location.latitude, location.location.longitude]
+      } else {
+        location.geolocation = location.location
+      }
       state.locations.push(location)
     },
   },
@@ -56,12 +62,12 @@ export default new Vuex.Store({
     getCategoryFilter: state => {
       return state.filter.categories;
     },
-    getZoomLocation: (state,getters) => {
-      if(getters.getFilteredLocations.length===1){
+    getZoomLocation: (state, getters) => {
+      if (getters.getFilteredLocations.length === 1) {
         return getters.getFilteredLocations[0]
-      }else{
+      } else {
         return state.locations.filter(function (location) {
-          if (state.filter.search.length>=4&&location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1) {
+          if (state.filter.search.length >= 4 && location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1) {
             return location
           }
         })[0]

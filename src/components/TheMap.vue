@@ -15,6 +15,7 @@
           v-for="location in locations"
           :key="location.name"
           :lat-lng="location.geolocation"
+          ref="marker"
         >
           <l-icon
             :icon-size="dynamicSize"
@@ -32,11 +33,10 @@
 </template>
 
 <script>
-const LocationContent = () => import("./LocationContent.vue")
+const LocationContent = () => import("./LocationContent.vue");
 
-import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet"
-const Vue2LeafletMarkerCluster =()=>import('vue2-leaflet-markercluster')
-
+import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet";
+const Vue2LeafletMarkerCluster = () => import("vue2-leaflet-markercluster");
 export default {
   name: "TheMap",
   components: {
@@ -46,8 +46,8 @@ export default {
     LIcon,
     LocationContent,
     LTooltip,
-    'v-marker-cluster': Vue2LeafletMarkerCluster,
- },
+    "v-marker-cluster": Vue2LeafletMarkerCluster
+  },
   computed: {
     filter() {
       return this.$store.state.filter;
@@ -59,11 +59,11 @@ export default {
       if (this.$store.getters.getZoomLocation) {
         return this.$store.getters.getZoomLocation.geolocation;
       } else {
-          if(this.$refs.map!=undefined) {
-            return this.$refs.map.center
-          } else {
-            return this.initCenter;
-          }
+        if (this.$refs.map != undefined) {
+          return this.$refs.map.center;
+        } else {
+          return this.initCenter;
+        }
       }
     },
     dynamicSize() {
@@ -79,23 +79,32 @@ export default {
       zoom: 6,
       bounds: null,
       iconSize: 30,
-      initCenter:[50.627542, 9.95845],
-      iconDefault:"./../assets/icons/icons8-marker-40.png",
-      iconBook:"./../assets/icons/marker-book.png",
-      iconBar:"./../assets/icons/marker-bar.png",
-      iconEvent:"./../assets/icons/marker-event.png",
-      iconFood:"./../assets/icons/marker-food.png",
-      iconShop:"./../assets/icons/marker-shop.png",
-      iconCreative:"./../assets/icons/marker-creative.png",
-      iconCafe:"./../assets/icons/marker-cafe.png",
+      initCenter: [50.627542, 9.95845],
+      iconDefault: "./../assets/icons/icons8-marker-40.png",
+      iconBook: "./../assets/icons/marker-book.png",
+      iconBar: "./../assets/icons/marker-bar.png",
+      iconEvent: "./../assets/icons/marker-event.png",
+      iconFood: "./../assets/icons/marker-food.png",
+      iconShop: "./../assets/icons/marker-shop.png",
+      iconCreative: "./../assets/icons/marker-creative.png",
+      iconCafe: "./../assets/icons/marker-cafe.png"
     };
   },
   methods: {
     zoomUpdated(zoom) {
       this.zoom = zoom;
+      if (this.$refs.marker != undefined) {
+        if (this.$refs.marker.length === 1) {
+          this.$refs.marker[0].mapObject.openPopup()
+        }
+      }
     },
     centerUpdated(center) {
-      if (center.lat == this.initCenter[0] || this.zoomLocation[0] == this.initCenter[0] ) {
+
+      if (
+        center.lat == this.initCenter[0] ||
+        this.zoomLocation[0] == this.initCenter[0]
+      ) {
         this.zoom = 6;
       } else {
         this.zoom = 11;
@@ -105,28 +114,28 @@ export default {
       this.bounds = bounds;
     },
     getIconUrl(categories) {
-      if(categories.indexOf("buch")!=-1){
-        return this.iconBook
+      if (categories.indexOf("buch") != -1) {
+        return this.iconBook;
       }
-      if(categories.indexOf("event")!=-1){
-        return this.iconEvent
+      if (categories.indexOf("event") != -1) {
+        return this.iconEvent;
       }
-      if(categories.indexOf("shop")!=-1){
-        return this.iconShop
+      if (categories.indexOf("shop") != -1) {
+        return this.iconShop;
       }
-      if(categories.indexOf("bar")!=-1){
-        return this.iconBar
+      if (categories.indexOf("bar") != -1) {
+        return this.iconBar;
       }
-      if(categories.indexOf("cafe")!=-1){
-        return this.iconCafe
+      if (categories.indexOf("cafe") != -1) {
+        return this.iconCafe;
       }
-      if(categories.indexOf("creative")!=-1){
-        return this.iconCreative
+      if (categories.indexOf("creative") != -1) {
+        return this.iconCreative;
       }
-      if(categories.indexOf("restaurant")!=-1){
-        return this.iconFood
+      if (categories.indexOf("restaurant") != -1) {
+        return this.iconFood;
       }
-      return this.iconDefault
+      return this.iconDefault;
     }
   }
 };

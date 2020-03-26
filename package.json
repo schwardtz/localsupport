@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-report": "vue-cli-service build --report"
   },
   "dependencies": {
     "@pderas/vue2-geocoder": "^1.1.0",
@@ -15,6 +16,8 @@
     "es7-object-polyfill": "^1.0.1",
     "firebase": "^7.11.0",
     "firebase-admin": "^8.10.0",
+    "firebase-auth-lite": "^0.5.4",
+    "firebase-firestore-lite": "^0.4.0",
     "firebase-functions": "^3.5.0",
     "http2": "^3.3.7",
     "leaflet": "^1.6.0",

@@ -5,13 +5,29 @@
       <div>
         <h2>Unterstützenswerte Projekte</h2>
         <ul>
-            <li><a href="https://supportyourlocalbar.com/" title="Support your local bar">support your local bar</a></li>
-            <li><a href="http://helfen.berlin/" title="helfen.berlin">Helfen.Berlin</a></li>
-            <li><a href="https://lokal-support.de/" title="DU FÜR DEINE *CLUBS, BARS UND CAFÉS IN STUTTGART">Lokal* Support</a></li>
-            <li><a href="https://pleasedontclose.com/" title="Please don't close">PleaseDon'tClose</a></li>
-            <li><a href="https://www.stuttgartsindwir.de/" title="Stuttgart sind wir">Stuttgart sind wir</a></li>
-          </ul>
-        </div>
+          <li>
+            <a
+              href="https://supportyourlocalbar.com/"
+              title="Support your local bar"
+            >support your local bar</a>
+          </li>
+          <li>
+            <a href="http://helfen.berlin/" title="helfen.berlin">Helfen.Berlin</a>
+          </li>
+          <li>
+            <a
+              href="https://lokal-support.de/"
+              title="DU FÜR DEINE *CLUBS, BARS UND CAFÉS IN STUTTGART"
+            >Lokal* Support</a>
+          </li>
+          <li>
+            <a href="https://pleasedontclose.com/" title="Please don't close">PleaseDon'tClose</a>
+          </li>
+          <li>
+            <a href="https://www.stuttgartsindwir.de/" title="Stuttgart sind wir">Stuttgart sind wir</a>
+          </li>
+        </ul>
+      </div>
       <div>
         <address>
           <h2>Impressum</h2>Johannes Klinger
@@ -25,10 +41,10 @@
           title="Icons von icons8"
         >Alle Icons von https://icons8.com/icons</a>
         <br />
-        <a
-          href="https://www.dafont.com/de/bargain.font"
-          title="Font für Überschrift"
-        >Schriftart der Überschrift von <br/> https://www.dafont.com/de/bargain.font</a>
+        <a href="https://www.dafont.com/de/bargain.font" title="Font für Überschrift">
+          Schriftart der Überschrift von
+          <br />https://www.dafont.com/de/bargain.font
+        </a>
       </div>
     </footer>
   </div>
@@ -36,6 +52,9 @@
 
 <script>
 const TheLocalSupport = () => import("./components/TheLocalSupport.vue");
+// import {App} from './app'
+// import 'firebase/firestore'
+
 
 export default {
   name: "App",
@@ -100,7 +119,7 @@ footer address {
 }
 
 footer {
- margin: 0 auto;
+  margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 10px;
   display: flex;
@@ -115,7 +134,7 @@ footer div {
 
 footer div ul {
   list-style: none;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
@@ -130,7 +149,6 @@ footer a {
   display: inline-block;
   margin-bottom: 5px;
 }
-
 
 p {
   color: rgba(80, 80, 80, 1);
@@ -169,26 +187,26 @@ p {
 }
 
 .map .marker-cluster-small {
-	background-color: rgba(142, 209, 252,0.6);
+  background-color: rgba(142, 209, 252, 0.6);
 }
 .map .marker-cluster-small div {
-	background-color: rgba(142, 209, 252,0.6);
+  background-color: rgba(142, 209, 252, 0.6);
 }
 .map .marker-cluster-medium {
-	background-color: rgba(252, 185,0, 0.6);
+  background-color: rgba(252, 185, 0, 0.6);
 }
 .map .marker-cluster-medium div {
-	background-color: rgba(252, 185,0, 0.6);
+  background-color: rgba(252, 185, 0, 0.6);
 }
 .map .marker-cluster-large {
-	background-color: rgba(255, 180, 188,0.6);
+  background-color: rgba(255, 180, 188, 0.6);
 }
 .map .marker-cluster-large div {
-	background-color: rgba(255, 180, 188,0.6);
+  background-color: rgba(255, 180, 188, 0.6);
 }
 
 .map .marker-cluster span {
-  color: rgba(100,100,100,1);
+  color: rgba(100, 100, 100, 1);
 }
 
 .map .leaflet-container a.leaflet-popup-close-button {
@@ -200,12 +218,11 @@ p {
 }
 
 .map .leaflet-popup {
-    margin-bottom: 40px;
-    margin-left: 1px;
+  margin-bottom: 40px;
+  margin-left: 1px;
 }
 
-.map .leaflet-tooltip{
-    margin-top: -24px;
+.map .leaflet-tooltip {
+  margin-top: -24px;
 }
-
 </style>

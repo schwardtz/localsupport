@@ -11,8 +11,13 @@
       <label for="description">Was bietet ihr an?*</label>
       <textarea v-model="description" name="description"></textarea>
       <label for="name">Unter welchen Kategorien möchtet ihr gefunden werden (kommagetrennt)?*</label>
-      <input type="text" v-model="categories" name="categories" placeholder="bspw. einkaufen,essen,bücher"/>
-     
+      <input
+        type="text"
+        v-model="categories"
+        name="categories"
+        placeholder="bspw. einkaufen,essen,bücher"
+      />
+
       <h3>Wie können Menschen mit euch in Kontakt treten?</h3>
       <div class="contact">
         <div class="column">
@@ -94,8 +99,9 @@ export default {
   methods: {
     putDataToFirestore(event) {
       event.preventDefault();
-      db.collection("contacts")
-        .doc(new Date().toDateString()+'-'+this.putTogetherLocation.email)
+      db.reference(
+        "contacts/" + new Date().toUTCString() + "-" + this.putTogetherLocation.email
+      )
         .set(this.putTogetherLocation)
         .then(function() {
           console.log("Document successfully written!");
@@ -206,14 +212,13 @@ input[type="submit"]:hover {
   align-self: center;
 }
 
-.notifications li  {
-  color: rgba(180,180,255,1);
+.notifications li {
+  color: rgba(180, 180, 255, 1);
   font-weight: 600;
   font-size: 15px;
 }
 .notifications {
-
-  border: 1px solid rgba(180,180,255,1);
+  border: 1px solid rgba(180, 180, 255, 1);
   padding: 30px;
   margin-bottom: 10px;
 }

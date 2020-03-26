@@ -36,7 +36,7 @@
 import db from "./../firebase/db.js";
 import Geocoder from "@pderas/vue2-geocoder";
 import Vue from "vue";
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
 
 Vue.use(Geocoder, {
   defaultCountryCode: "DE", // e.g. 'CA'
@@ -94,14 +94,21 @@ export default {
       };
 
       Vue.$geocoder.send(addressObj, response => {
-        locationToSend.location = new firebase.firestore.GeoPoint(response.results[0].geometry.location.lat, response.results[0].geometry.location.lng);
-      db.collection("locations")
-          .doc(this.email)
+        locationToSend.location = [
+          response.results[0].geometry.location.lat,response.results[0].geometry.location.lng]
+        event.preventDefault();
+        db.reference(
+          "locations/" +
+            new Date().toUTCString() +
+            "-" +
+            this.putTogetherLocation.email
+        )
           .set(locationToSend)
           .then(function() {
             console.log(locationToSend);
             console.log("Document successfully written!");
           });
+
         this.name = "";
         this.website = "";
         this.email = "";
