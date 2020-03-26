@@ -35,7 +35,7 @@ export default new Vuex.Store({
     addLocation(state, location) {
       location.geolocation = [location.location.latitude, location.location.longitude]
       state.locations.push(location)
-    }
+    },
   },
   getters: {
     getFilteredLocations: state => {
@@ -56,13 +56,16 @@ export default new Vuex.Store({
     getCategoryFilter: state => {
       return state.filter.categories;
     },
-    getZoomLocation: state => {
-      return state.locations.filter(function (location) {
-        if (state.filter.search.length>=4&&location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1) {
-
-          return location
-        }
-      })[0]
+    getZoomLocation: (state,getters) => {
+      if(getters.getFilteredLocations.length===1){
+        return getters.getFilteredLocations[0]
+      }else{
+        return state.locations.filter(function (location) {
+          if (state.filter.search.length>=4&&location.city.toLowerCase().indexOf(state.filter.search.toLowerCase()) != -1) {
+            return location
+          }
+        })[0]
+      }
     }
   },
   strict: true

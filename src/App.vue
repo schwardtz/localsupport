@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <LocalSupport />
+    <TheLocalSupport />
     <footer>
       <div>
         <h2>Unterstützenswerte Projekte</h2>
         <ul>
             <li><a href="https://supportyourlocalbar.com/" title="Support your local bar">support your local bar</a></li>
             <li><a href="http://helfen.berlin/" title="helfen.berlin">Helfen.Berlin</a></li>
+            <li><a href="https://lokal-support.de/" title="DU FÜR DEINE *CLUBS, BARS UND CAFÉS IN STUTTGART">Lokal* Support</a></li>
+            <li><a href="https://pleasedontclose.com/" title="Please don't close">PleaseDon'tClose</a></li>
+            <li><a href="https://www.stuttgartsindwir.de/" title="Stuttgart sind wir">Stuttgart sind wir</a></li>
           </ul>
         </div>
       <div>
@@ -32,12 +35,12 @@
 </template>
 
 <script>
-const LocalSupport = () => import("./components/LocalSupport.vue");
+const TheLocalSupport = () => import("./components/TheLocalSupport.vue");
 
 export default {
   name: "App",
   components: {
-    LocalSupport
+    TheLocalSupport
   }
 };
 </script>
@@ -190,8 +193,19 @@ p {
 
 .map .leaflet-container a.leaflet-popup-close-button {
   color: white;
-  top: 5px;
-  right: 5px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  padding: 0;
+}
+
+.map .leaflet-popup {
+    margin-bottom: 40px;
+    margin-left: 1px;
+}
+
+.map .leaflet-tooltip{
+    margin-top: -24px;
 }
 
 </style>

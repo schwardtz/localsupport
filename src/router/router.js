@@ -1,15 +1,15 @@
 
 import VueRouter from 'vue-router'
 
-const Contact =()=> import("./../components/Contact.vue")
-const Locations =()=> import("./../components/Locations.vue")
-const Map =()=> import("./../components/Map.vue")
-const Input =()=> import("./../components/Input.vue")
+const TheContact =()=> import("./../components/TheContact.vue")
+const TheLocations =()=> import("./../components/TheLocations.vue")
+const TheMap =()=> import("./../components/TheMap.vue")
+const TheInput =()=> import("./../components/TheInput.vue")
 const routes = [
-  { path: '/', name:'home', component: Map },
-  { path: '/contact', name:'contact', component: Contact },
-  { path: '/overview', name:'Locations', component: Locations },
-  { path: '/input', name:'input', component: Input },
+  { path: '/', name:'home', component: TheMap },
+  { path: '/contact', name:'contact', component: TheContact },
+  { path: '/overview', name:'Locations', component: TheLocations },
+  { path: '/input', name:'input', component: TheInput },
 ]
 
 const router = new VueRouter({
