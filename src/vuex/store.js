@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import db from "./../firebase/db.js"
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -16,7 +15,6 @@ export default new Vuex.Store({
     fetchLocations({ commit }) {
       const collection = db.reference("locations");
       collection.get({pageSize:200}).then(function (querySnapshot) {
-        console.log(querySnapshot)
         querySnapshot.documents.forEach(function (doc) {
           commit("addLocation", doc)
         });

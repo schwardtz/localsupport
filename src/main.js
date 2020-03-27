@@ -1,3 +1,4 @@
+import 'es6-promise/auto'
 import store from './vuex/store.js'
 import Vue from 'vue'
 import App from './App.vue'

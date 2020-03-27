@@ -22,8 +22,8 @@
             :icon-anchor="dynamicAnchor"
             :icon-url="getIconUrl(location.categories)"
           ></l-icon>
-          <l-popup>
-            <LocationContent :data="location" />
+          <l-popup lazy>
+            <LocationContent :data="location" lazy/>
           </l-popup>
           <l-tooltip>{{location.name}}!</l-tooltip>
         </l-marker>
@@ -35,7 +35,7 @@
 <script>
 const LocationContent = () => import("./LocationContent.vue");
 
-import { LMap, LTileLayer, LPopup, LIcon, LTooltip } from "vue2-leaflet";
+import { LTileLayer, LMap, LPopup, LIcon, LTooltip } from "vue2-leaflet";
 const Vue2LeafletMarkerCluster = () => import("vue2-leaflet-markercluster");
 export default {
   name: "TheMap",

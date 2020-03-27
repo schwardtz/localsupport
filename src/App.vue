@@ -26,6 +26,9 @@
           <li>
             <a href="https://www.stuttgartsindwir.de/" title="Stuttgart sind wir">Stuttgart sind wir</a>
           </li>
+          <li>
+            <a href="https://longlivetheblock.com/" title="Long Live The Block">Long live the block</a>
+          </li>
         </ul>
       </div>
       <div>
