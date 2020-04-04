@@ -37,7 +37,7 @@
           <br />Freihofstr. 16
           <br />60385 Frankfurt
           <br />Kontakt:
-          <a href="mailto:mail@johannesklinger.com">E-Mail</a>
+          <a href="mailto:hallo@supportyourlocaleinzelhandel.de">E-Mail</a>
         </address>
         <a
           href="https://icons8.com/icons"
@@ -202,10 +202,11 @@ p {
   background-color: rgba(252, 185, 0, 0.6);
 }
 .map .marker-cluster-large {
-  background-color: rgba(255, 180, 188, 0.6);
+  
+  background-color: rgba(6, 147, 227,0.6);
 }
 .map .marker-cluster-large div {
-  background-color: rgba(255, 180, 188, 0.6);
+  background-color: rgba(6, 147, 227,0.6);
 }
 
 .map .marker-cluster span {

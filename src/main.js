@@ -8,6 +8,7 @@ import router from "./router/router.js"
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import './registerServiceWorker'
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({

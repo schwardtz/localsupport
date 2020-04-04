@@ -14,7 +14,7 @@
         <p>
           Schön, dass du hier bist! Du führst ein Restaurant oder einen Shop und bietest aktuell Gutscheine an, nimmst Bestellungen entgegen, oder lieferst Waren aus? Das finden wir ziemlich großartig. Wenn du hier mit deinem Angebot gelistet werden möchtest, schreib uns einfach eine
           <a
-            href="mailto:mail@johannesklinger.com"
+            href="mailto:hallo@supportyourlocaleinzelhandel.de"
           >Mail</a> mit Infos und Links zu deinem Angebot, oder füll unser
           <router-link to="contact">Formular</router-link> aus.
         </p>
