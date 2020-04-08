@@ -133,6 +133,7 @@ export default {
         this.description = "";
         this.street = "";
         this.city = "";
+        this.categories = "";
       }
     }
   }
