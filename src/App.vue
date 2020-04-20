@@ -29,6 +29,9 @@
           <li>
             <a href="https://longlivetheblock.com/" title="Long Live The Block">Long live the block</a>
           </li>
+          <li>
+            <a href="https://www.frankfurtammund.com/" title="Frankfurt am Mund">Frankfurt am Mund</a>
+          </li>
         </ul>
       </div>
       <div>

@@ -19,7 +19,7 @@
           <router-link to="contact">Formular</router-link> aus.
         </p>
         <p>
-          Wenn euer Lieblingsgeschäft nicht dabei ist, ruft im Zweifel einfach dort an.
+          Wenn dein Lieblingsgeschäft nicht dabei ist, ruf im Zweifel einfach dort an.
           <br />Unserer Erfahrung nach bieten sehr viele Shops und Restaurants außergewöhliche Lösungen für die aktuelle Situation an.
         </p>
       </div>
