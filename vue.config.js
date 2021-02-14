@@ -19,7 +19,13 @@ module.exports = {
             .tap(options => {
                 options.limit = -1
                 return options
-            })
-        },
-    transpileDependencies:['leaflet','firebase-firestore-lite']
+            }),
+            config.plugins.delete('prefetch')
+        config.plugin('preload').tap((options) => {
+            options[0].include = 'allChunks'
+            return options
+        })
+
+    },
+    transpileDependencies: ['leaflet', 'firebase-firestore-lite']
 }
