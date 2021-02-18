@@ -26,7 +26,7 @@
           <l-popup lazy>
             <LocationContent :data="location" :color="getMarkerColor(location.categories)" />
           </l-popup>
-          <l-tooltip :options="tooltipOptions">{{ location.name }}!</l-tooltip>
+          <l-tooltip :options="tooltipOptions">{{ location.name }}</l-tooltip>
         </l-circle-marker>
       </v-marker-cluster>
     </l-map>
