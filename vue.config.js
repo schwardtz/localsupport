@@ -29,5 +29,6 @@ module.exports = {
                 return options
             })
     },
+    
     transpileDependencies: ['leaflet', 'firebase-firestore-lite']
 }

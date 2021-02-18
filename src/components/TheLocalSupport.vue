@@ -56,7 +56,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
@@ -96,8 +95,6 @@ header > div {
   min-height: 80vh;
 }
 
-
-
 h1 {
   display: inline-block;
   font-size: 0;
@@ -105,6 +102,7 @@ h1 {
   width: 100%;
 }
 h1 img {
+  width: 100%;
   width: 100%;
 }
 
@@ -118,7 +116,7 @@ h1 a:focus {
 
 p {
   color: rgba(80, 80, 80, 1);
-  margin: 20px 0 10px;
+  margin: 30px 0 10px;
   text-align: justify;
   padding-left: 5px;
 }

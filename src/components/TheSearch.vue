@@ -32,7 +32,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .locations {
   display: grid;
@@ -81,7 +80,7 @@ input {
   display: inline-block;
   cursor: pointer;
   height: 35px;
-  top: 3px;
+  top: 18px;
   width: 35px;
   z-index: 1;
   opacity: 0.5;

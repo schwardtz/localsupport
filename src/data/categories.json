@@ -3,7 +3,7 @@
         "name" : "restaurant",
         "description": "Essen",
         "icon" : "icons8-natural-food-64.png",
-        "color" : "#ffffd2"
+        "color" : "#F62DAE"
     },
     {
         "name" : "shop",
@@ -33,7 +33,7 @@
         "name" : "creative",
         "description": "Kreativschaffende",
         "icon" : "icons8-paint-palette-64.png",
-        "color" : "#ffefa1"
+        "color" : "#C0C999"
     },
     {
         "name" : "buch",

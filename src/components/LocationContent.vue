@@ -1,14 +1,11 @@
 <template>
   <div class="location-container" >
-    <address :style="{ 'background-image': 'url('+selectedImageOne+')', 'background-position':horizontalPositionOne+' '+verticalPositionOne+'%'}">
+    <address :style="{'background-color':color}">
       <h2>{{data.name}}</h2>
       <span>{{data.street}}</span>
       <span>{{data.city}}</span>
     </address>
-    <content 
-      :style="{ 'background-image': 'url('+selectedImageTwo+')', 'background-position':horizontalPositionTwo+'% '+verticalPositionTwo+'%'}"
-    >
-      <p v-html="data.description"></p>
+      <content v-html="data.description"></content>
       <nav>
         <a
           rel="noopener nofollow noreferrer"
@@ -54,7 +51,6 @@
           <img width="24px" height="24px" alt="Icon Instagram" src="./../assets/icons/icons8-instagram-64.png" />
         </a>
       </nav>
-    </content>
   </div>
 </template>
 
@@ -62,40 +58,8 @@
 export default {
   name: "LocationContent",
   props: {
-    data: Object
-  },
-  data() {
-    return {
-      backgroundImages: [
-        "./../assets/background/blob-shape_one.svg",
-        "./../assets/background/blob-shape_two.svg",
-        "./../assets/background/blob-shape_three.svg",
-        "./../assets/background/blob-shape_four.svg",
-        "./../assets/background/blob-shape_five.svg",
-        "./../assets/background/blob-shape_six.svg",
-        "./../assets/background/blob-shape_seven.svg",
-        "./../assets/background/blob-shape_eight.svg",
-        "./../assets/background/blob-shape_nine.svg"
-      ],
-      selectedImageOne: String,
-      selectedImageTwo: String,
-      verticalPosition: Number,
-      horizontalPosition: Number
-    };
-  },
-  created() {
-    const randImageOne = Math.floor(
-      Math.random() * this.backgroundImages.length
-    );
-    const randImageTwo = Math.floor(
-      Math.random() * this.backgroundImages.length
-    );
-    this.selectedImageOne = this.backgroundImages[randImageOne];
-    this.selectedImageTwo = this.backgroundImages[randImageTwo];
-    this.verticalPositionOne = Math.floor(Math.random() * (60 - 30 + 1)) + 30;
-    this.horizontalPositionOne = "-170px";
-    this.verticalPositionTwo = Math.floor(Math.random() * (60 - 30 + 1)) + 30;
-    this.horizontalPositionTwo = Math.round(Math.random() * 100);
+    data: Object,
+    color: String
   },
   computed: {
     protocolAttachedWebsite() {
@@ -108,10 +72,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .location-container {
-  background-color: rgba(80, 80, 80, 1);
   position: relative;
   transition: all 0.7s ease-out;
   outline: none;
@@ -119,53 +81,14 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-}
-
-.location-container:hover address {
-  background-size: 300%;
-  background-position: center center !important;
 }
 
 content {
   background-color: white;
   display: inline-block;
-  padding: 20px 20px 0 20px;
-  width: 100%;
-  flex: 1;
-  text-align: left;
+  padding: 15px 15px 0 15px;
   color: rgba(80, 80, 80, 1);
   font-size: 13px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: 300%;
-  position: relative;
-  transition: all 1s ease-out;
-}
-
-
-.location-container:hover content {
-  background-size: 500%;
-  background-position: center center !important;
-}
-
-content::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: white;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.95;
-}
-
-content p {
-  flex-grow: 1;
 }
 
 nav {
@@ -180,35 +103,22 @@ address {
   height: 85px;
   text-transform: lowercase;
   text-align: left;
-  color: white;
   padding: 15px;
-    background-size: 150%;
-  background-position: -170px -180px;
-  transition: all 0.7s ease-out;
+  display: flex;
+  flex-direction: column;
 }
 
-address span {
-  display: inline-block;
-  width: 100%;
-  font-size: 13px;
-}
-
-p,
-a {
-  color: rgba(80, 80, 80, 1);
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+address * {
+  color: white;
 }
 
 a {
   text-decoration: none;
-  width: auto;
   font-size: 15px;
   width: 48px;
   height: 48px;
   text-align: center;
+  display: inline-block;
 }
 
 h2 {
@@ -217,25 +127,9 @@ h2 {
   font-size: 15px;
 }
 
-span {
-  /* color: rgba(255,220 ,220 ,1); */
-  color: white;
-}
-
-a img width="24px" height="24px" {
-  opacity: 0.7;
-  transition: opacity 1s;
+a img  {
   width: 24px;
   height: 24px;
   margin-top: 12px;
-}
-
-a:hover img width="24px" height="24px" {
-  opacity: 1;
-}
-
-img width="24px" height="24px" {
-  width: 20px;
-  height: 20px;
 }
 </style>

@@ -24,7 +24,7 @@
           lazy
         >
           <l-popup lazy>
-            <LocationContent :data="location" lazy />
+            <LocationContent :data="location" :color="getMarkerColor(location.categories)" />
           </l-popup>
           <l-tooltip :options="tooltipOptions">{{ location.name }}!</l-tooltip>
         </l-circle-marker>
@@ -80,7 +80,6 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       zoom: 6,
       bounds: null,
-      iconSize: 30,
       tooltipOptions: {
         offset: [0, 24],
       },
@@ -95,14 +94,6 @@ export default {
       },
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      iconDefault: "./../assets/icons/icons8-marker-40.png",
-      iconBook: "./../assets/icons/marker-book.png",
-      iconBar: "./../assets/icons/marker-bar.png",
-      iconEvent: "./../assets/icons/marker-event.png",
-      iconFood: "./../assets/icons/marker-food.png",
-      iconShop: "./../assets/icons/marker-shop.png",
-      iconCreative: "./../assets/icons/marker-creative.png",
-      iconCafe: "./../assets/icons/marker-cafe.png",
       colorDefault : "#6ddccf",
       colorFood: CategoriesData[0].color,
       colorShop: CategoriesData[1].color,
@@ -158,36 +149,11 @@ export default {
         return this.colorFood;
       }
     },
-    getIconUrl(categories) {
-      if (categories.indexOf("buch") != -1) {
-        return this.iconBook;
-      }
-      if (categories.indexOf("event") != -1) {
-        return this.iconEvent;
-      }
-      if (categories.indexOf("shop") != -1) {
-        return this.iconShop;
-      }
-      if (categories.indexOf("bar") != -1) {
-        return this.iconBar;
-      }
-      if (categories.indexOf("cafe") != -1) {
-        return this.iconCafe;
-      }
-      if (categories.indexOf("creative") != -1) {
-        return this.iconCreative;
-      }
-      if (categories.indexOf("restaurant") != -1) {
-        return this.iconFood;
-      }
-      return this.iconDefault;
-    },
   },
 };
 </script>
 
 <style scoped>
-@import "~leaflet.markercluster/dist/MarkerCluster.css";
 @import "~leaflet.markercluster/dist/MarkerCluster.Default.css";
 .map {
   height: 70vh;
@@ -201,14 +167,6 @@ export default {
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-
-.leaflet-marker-icon {
-  height: 30px !important;
-}
-
-.leaflet-popup-content-wrapper content {
-  box-shadow: none;
 }
 
 .leaflet-popup-content {
