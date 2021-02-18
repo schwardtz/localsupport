@@ -2,36 +2,43 @@
     {
         "name" : "restaurant",
         "description": "Essen",
-        "icon" : "icons8-natural-food-64.png"
+        "icon" : "icons8-natural-food-64.png",
+        "color" : "#ffffd2"
     },
     {
         "name" : "shop",
         "description": "Einkaufen",
-        "icon" : "icons8-favorite-cart-64.png"
+        "icon" : "icons8-favorite-cart-64.png",
+        "color" : "#ffcb91"
     },
     {
         "name" : "event",
         "description": "Erleben",
-        "icon" : "icons8-crowd-64.png"
+        "icon" : "icons8-crowd-64.png",
+        "color" : "#fcbad3"
     },
     {
         "name" : "bar",
         "description": "Trinken",
-        "icon" : "icons8-cocktail-64.png"
+        "icon" : "icons8-cocktail-64.png",
+        "color" : "#aa96da"
     },
     {
         "name" : "cafe",
         "description": "Cafés",
-        "icon" : "icons8-cafe-64.png"
+        "icon" : "icons8-cafe-64.png",
+        "color" : "#94ebcd"
     },
     {
         "name" : "creative",
         "description": "Kreativschaffende",
-        "icon" : "icons8-paint-palette-64.png"
+        "icon" : "icons8-paint-palette-64.png",
+        "color" : "#ffefa1"
     },
     {
         "name" : "buch",
         "description": "Lesen",
-        "icon" : "icons8-book-64.png"
+        "icon" : "icons8-book-64.png",
+        "color" : "#a8d8ea"
     }
 ]

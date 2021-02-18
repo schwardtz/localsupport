@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description"><img :src="'./../assets/icons/'+category.icon" :alt="'Icon '+category.description"/></button>
+  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description"  :style="{ 'border-color': category.color}"><img :src="'./../assets/icons/'+category.icon" :alt="'Icon '+category.description"/></button>
 </div>
 </template>
 
@@ -38,6 +38,7 @@ button {
   transition: background-color 1s;
   width: 40px;
   background-color:rgba(255,255,255,0);
+  border-bottom: 2px solid;
 }
 
 button:hover{

@@ -4,29 +4,29 @@
       style="height: 100%; width: 100%"
       :zoom="zoom"
       :center="zoomLocation"
+      :options="mapOptions"
       @update:center="centerUpdated"
       @update:zoom="zoomUpdated"
       @update:bounds="boundsUpdated"
       ref="map"
     >
-      <l-tile-layer :url="url"></l-tile-layer>
-      <v-marker-cluster :options="{maxClusterRadius: 20, animate: false}">
-        <l-marker
+      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      <v-marker-cluster :options="{ maxClusterRadius: 20, animate: false }">
+        <l-circle-marker
           v-for="location in locations"
           :key="location.name"
           :lat-lng="location.geolocation"
+          :radius="circle.radius"
+          :color="getMarkerColor(location.categories)"
+          :fillColor="getMarkerColor(location.categories)"
+          :fillOpacity="circle.fillOpacity"
           ref="marker"
         >
-          <l-icon
-            :icon-size="dynamicSize"
-            :icon-anchor="dynamicAnchor"
-            :icon-url="getIconUrl(location.categories)"
-          ></l-icon>
           <l-popup lazy>
-            <LocationContent :data="location" lazy/>
+            <LocationContent :data="location" lazy />
           </l-popup>
-          <l-tooltip>{{location.name}}!</l-tooltip>
-        </l-marker>
+          <l-tooltip :options="tooltipOptions">{{ location.name }}!</l-tooltip>
+        </l-circle-marker>
       </v-marker-cluster>
     </l-map>
   </div>
@@ -35,7 +35,14 @@
 <script>
 const LocationContent = () => import("./LocationContent.vue");
 
-import { LTileLayer, LMap, LPopup, LIcon, LTooltip } from "vue2-leaflet";
+import {
+  LTileLayer,
+  LMap,
+  LPopup,
+  LTooltip,
+  LCircleMarker,
+} from "vue2-leaflet";
+import CategoriesData from "../data/categories.json";
 const Vue2LeafletMarkerCluster = () => import("vue2-leaflet-markercluster");
 export default {
   name: "TheMap",
@@ -43,10 +50,10 @@ export default {
     LMap,
     LTileLayer,
     LPopup,
-    LIcon,
     LocationContent,
     LTooltip,
-    "v-marker-cluster": Vue2LeafletMarkerCluster
+    LCircleMarker,
+    "v-marker-cluster": Vue2LeafletMarkerCluster,
   },
   computed: {
     filter() {
@@ -66,12 +73,6 @@ export default {
         }
       }
     },
-    dynamicSize() {
-      return [this.iconSize, this.iconSize * 1.15];
-    },
-    dynamicAnchor() {
-      return [this.iconSize / 2, this.iconSize * 1.15];
-    }
   },
   data() {
     return {
@@ -79,7 +80,20 @@ export default {
       zoom: 6,
       bounds: null,
       iconSize: 30,
+      tooltipOptions: {
+        offset: [0, 24],
+      },
       initCenter: [50.627542, 9.95845],
+      mapOptions: {
+        zoomSnap: 0.5,
+        preferCanvas: true,
+      },
+      circle: {
+        radius: 6,
+        fillOpacity: 1
+      },
+      attribution:
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       iconDefault: "./../assets/icons/icons8-marker-40.png",
       iconBook: "./../assets/icons/marker-book.png",
       iconBar: "./../assets/icons/marker-bar.png",
@@ -87,7 +101,15 @@ export default {
       iconFood: "./../assets/icons/marker-food.png",
       iconShop: "./../assets/icons/marker-shop.png",
       iconCreative: "./../assets/icons/marker-creative.png",
-      iconCafe: "./../assets/icons/marker-cafe.png"
+      iconCafe: "./../assets/icons/marker-cafe.png",
+      colorDefault : "#6ddccf",
+      colorFood: CategoriesData[0].color,
+      colorShop: CategoriesData[1].color,
+      colorEvent: CategoriesData[2].color,
+      colorBar: CategoriesData[3].color,
+      colorCafe: CategoriesData[4].color,
+      colorCreative: CategoriesData[5].color,
+      colorBook: CategoriesData[6].color,
     };
   },
   methods: {
@@ -95,12 +117,11 @@ export default {
       this.zoom = zoom;
       if (this.$refs.marker != undefined) {
         if (this.$refs.marker.length === 1) {
-          this.$refs.marker[0].mapObject.openPopup()
+          this.$refs.marker[0].mapObject.openPopup();
         }
       }
     },
     centerUpdated(center) {
-
       if (
         center.lat == this.initCenter[0] ||
         this.zoomLocation[0] == this.initCenter[0]
@@ -112,6 +133,29 @@ export default {
     },
     boundsUpdated(bounds) {
       this.bounds = bounds;
+    },
+    getMarkerColor(categories) {
+      if (categories.indexOf("buch") != -1) {
+        return this.colorBook;
+      }
+      if (categories.indexOf("event") != -1) {
+        return this.colorEvent;
+      }
+      if (categories.indexOf("shop") != -1) {
+        return this.colorShop;
+      }
+      if (categories.indexOf("bar") != -1) {
+        return this.colorBar;
+      }
+      if (categories.indexOf("cafe") != -1) {
+        return this.colorCafe;
+      }
+      if (categories.indexOf("creative") != -1) {
+        return this.colorCreative;
+      }
+      if (categories.indexOf("restaurant") != -1) {
+        return this.colorFood;
+      }
     },
     getIconUrl(categories) {
       if (categories.indexOf("buch") != -1) {
@@ -136,8 +180,8 @@ export default {
         return this.iconFood;
       }
       return this.iconDefault;
-    }
-  }
+    },
+  },
 };
 </script>
 
