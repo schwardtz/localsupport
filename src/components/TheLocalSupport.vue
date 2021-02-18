@@ -3,7 +3,7 @@
     <header>
       <div>
         <h1>
-          <router-link to="/"><img src="../assets/logo.png" alt="Logo Support your local Einzelhandel"/>Support your local Einzelhandel</router-link>
+          <router-link to="/"><img src="../assets/logo.png" alt="Logo Support your local Einzelhandel" width="350px" height="37px" />Support your local Einzelhandel</router-link>
         </h1>
         <div class="search-desktop">
           <TheSearch />
@@ -24,10 +24,6 @@
         </p>
       </div>
     </header>
-    <div class="search-mobile">
-      <TheSearch />
-      <TheCategories v-on:category-locations="filterLocationsByCategory" />
-    </div>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -62,18 +58,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.search-mobile {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .search-mobile {
-    display: block;
-  }
-  .search-desktop {
-    display: none;
-  }
-}
 h3 {
   margin: 40px 0 0;
 }
@@ -101,7 +85,7 @@ header {
 
 @media screen and (max-width: 800px) {
   header {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 

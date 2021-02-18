@@ -1,6 +1,7 @@
 <template>
   <div class="search">
-    <input type="text" v-model="search" @keyup="changeFilterSearch" placeholder="suchen" />
+    <label for="suche">suche</label>
+    <input type="text" v-model="search" @keyup="changeFilterSearch"  id="suche" />
     <button class="clear" @click="clearSearch" v-if="remove">&times;</button>
   </div>
 </template>
@@ -36,6 +37,11 @@ export default {
 .locations {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+label {
+  padding-left: 2px;
+  font-size: 13px;
 }
 
 input {

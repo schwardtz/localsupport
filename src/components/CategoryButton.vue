@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description"  :style="{ 'border-color': category.color}"><img :src="'./../assets/icons/'+category.icon" :alt="'Icon '+category.description"/></button>
+  <button @click="changeFilterCategory" :class="{ active:isActive}" :title="category.description"  :style="{ 'border-color': category.color}"><img :src="'./../assets/icons/'+category.icon" :alt="'Icon '+category.description" width="24px" height="24px"/></button>
 </div>
 </template>
 

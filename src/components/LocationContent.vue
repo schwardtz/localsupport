@@ -17,7 +17,7 @@
           :href="protocolAttachedWebsite"
           :title="'Website: '+data.name"
         >
-          <img src="./../assets/icons/icons8-website-64.png" />
+          <img width="24px" height="24px" alt="Icon Website" src="./../assets/icons/icons8-website-64.png" />
         </a>
         <a
           rel="noopener nofollow noreferrer"
@@ -25,7 +25,7 @@
           title="Email schreiben"
           :href="'mailto:'+data.email"
         >
-          <img src="./../assets/icons/icons8-envelope-64.png" />
+          <img width="24px" height="24px" alt="Icon Email schreiben" src="./../assets/icons/icons8-envelope-64.png" />
         </a>
         <a
           rel="noopener nofollow noreferrer"
@@ -33,7 +33,7 @@
           title="Anrufen"
           :href="'tel:'+cleanedUpPhoneNumber"
         >
-          <img src="./../assets/icons/icons8-call-64.png" />
+          <img width="24px" height="24px" alt="Icon Telefon" src="./../assets/icons/icons8-call-64.png" />
         </a>
         <a
           rel="noopener nofollow noreferrer"
@@ -42,7 +42,7 @@
           v-if="data.facebook"
           :href="data.facebook"
         >
-          <img src="./../assets/icons/icons8-facebook-64.png" />
+          <img width="24px" height="24px" alt="Icon Facebook" src="./../assets/icons/icons8-facebook-64.png" />
         </a>
         <a
           rel="noopener nofollow noreferrer"
@@ -51,7 +51,7 @@
           v-if="data.instagram"
           :href="data.instagram"
         >
-          <img src="./../assets/icons/icons8-instagram-64.png" />
+          <img width="24px" height="24px" alt="Icon Instagram" src="./../assets/icons/icons8-instagram-64.png" />
         </a>
       </nav>
     </content>
@@ -222,7 +222,7 @@ span {
   color: white;
 }
 
-a img {
+a img width="24px" height="24px" {
   opacity: 0.7;
   transition: opacity 1s;
   width: 24px;
@@ -230,11 +230,11 @@ a img {
   margin-top: 12px;
 }
 
-a:hover img {
+a:hover img width="24px" height="24px" {
   opacity: 1;
 }
 
-img {
+img width="24px" height="24px" {
   width: 20px;
   height: 20px;
 }
