@@ -1,16 +1,19 @@
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 //     .BundleAnalyzerPlugin;
-module.exports = {
-    // configureWebpack: {
-    //     plugins: [new BundleAnalyzerPlugin()]
-    // },
-    publicPath: '/'
+// module.exports = {
+//     configureWebpack: {
+//         plugins: [new BundleAnalyzerPlugin()]
+//     },
+//     publicPath: '/'
 
-};
+// };
 
 // vue.config.js
 module.exports = {
     publicPath: '/',
+    // configureWebpack: {
+    //     plugins: [new BundleAnalyzerPlugin()]
+    // },
     chainWebpack: config => {
         config.module
             .rule('images')
@@ -21,11 +24,10 @@ module.exports = {
                 return options
             }),
             config.plugins.delete('prefetch')
-        config.plugin('preload').tap((options) => {
-            options[0].include = 'allChunks'
-            return options
-        })
-
+            config.plugin('preload').tap((options) => {
+                options[0].include = 'allChunks'
+                return options
+            })
     },
     transpileDependencies: ['leaflet', 'firebase-firestore-lite']
 }

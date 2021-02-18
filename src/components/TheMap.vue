@@ -21,6 +21,7 @@
           :fillColor="getMarkerColor(location.categories)"
           :fillOpacity="circle.fillOpacity"
           ref="marker"
+          lazy
         >
           <l-popup lazy>
             <LocationContent :data="location" lazy />

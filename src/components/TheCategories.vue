@@ -3,16 +3,6 @@
     <li v-for="category in categories" :key="category.name">
       <CategoryButton :category="category" />
     </li>
-    <li class="nav">
-      <router-link class="link" title="Zur Karte" to="/">
-        <img src="./../assets/icons/icons8-map-marker-64.png" alt="Karte" />
-      </router-link>
-    </li>
-    <li>
-      <router-link class="link" title="Zur Übersicht" to="/overview">
-        <img src="./../assets/icons/icons8-web-64.png" alt="Homepage" />
-      </router-link>
-    </li>
   </ul>
 </template>
 
@@ -35,7 +25,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 ul {
   list-style: none;
