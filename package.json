@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@pderas/vue2-geocoder": "^1.1.0",
-    "core-js": "^3.8.3",
+    "core-js": "^3.9.1",
     "dns": "^0.2.2",
     "es6-promise": "^4.2.8",
     "es7-object-polyfill": "^1.0.1",
@@ -18,7 +18,7 @@
     "firebase-admin": "^8.13.0",
     "firebase-auth-lite": "^0.5.4",
     "firebase-firestore-lite": "^0.4.3",
-    "firebase-functions": "^3.13.1",
+    "firebase-functions": "^3.13.2",
     "http2": "^3.3.7",
     "leaflet": "^1.7.1",
     "register-service-worker": "^1.7.2",

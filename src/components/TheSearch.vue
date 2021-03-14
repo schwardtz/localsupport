@@ -16,7 +16,7 @@ export default {
     },
     clearSearch: function() {
       this.search = "";
-      store.commit("searchFilter", this.search);
+      store.commit("searchFilter", "clear");
     }
   },
   data() {
